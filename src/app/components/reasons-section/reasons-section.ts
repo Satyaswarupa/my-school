@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { figmaAssets } from '../../shared/figma-assets';
 
 interface TitleSegment {
@@ -29,9 +29,22 @@ interface Reason {
       </div>
 
       <div class="flex w-full flex-col items-start gap-5">
-        @for (reason of reasons; track reason.number) {
-          <div class="group relative flex w-full flex-col items-start border-t border-b border-[rgba(255,255,255,0.2)] px-5 py-5">
-            <div class="pointer-events-none absolute inset-0 bg-gradient-to-r from-white/10 via-white/5 to-transparent opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-100"></div>
+        @for (reason of reasons; track reason.number; let i = $index) {
+          <div
+            class="group relative flex w-full cursor-pointer flex-col items-start border-t border-b border-[rgba(255,255,255,0.2)] px-5 py-5"
+            role="button"
+            tabindex="0"
+            [attr.aria-expanded]="expandedIndex() === i"
+            (click)="toggle(i)"
+            (keydown.enter)="toggle(i)"
+            (keydown.space)="toggle(i); $event.preventDefault()"
+          >
+            <div
+              [class]="
+                'pointer-events-none absolute inset-0 bg-gradient-to-r from-white/10 via-white/5 to-transparent transition-opacity duration-300 ease-out group-hover:opacity-100 ' +
+                (expandedIndex() === i ? 'opacity-100' : 'opacity-0')
+              "
+            ></div>
 
             <div class="relative flex w-full items-center justify-between">
               <div class="flex items-start gap-5 font-bold text-white md:gap-20">
@@ -42,11 +55,26 @@ interface Reason {
                   }
                 </p>
               </div>
-              <img [src]="assets.navigateCircle" alt="" class="size-[30px] shrink-0" />
+              <img
+                [src]="assets.navigateCircle"
+                alt=""
+                class="size-[30px] shrink-0 transition-transform duration-300"
+                [class.rotate-90]="expandedIndex() === i"
+              />
             </div>
-            <div class="relative grid w-full grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out group-hover:grid-rows-[1fr]">
+            <div
+              [class]="
+                'relative grid w-full transition-[grid-template-rows] duration-300 ease-out group-hover:grid-rows-[1fr] ' +
+                (expandedIndex() === i ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]')
+              "
+            >
               <div class="overflow-hidden">
-                <p class="pt-5 text-xs text-white opacity-0 transition-all duration-300 ease-out group-hover:text-xl group-hover:opacity-100">
+                <p
+                  [class]="
+                    'pt-5 text-xs text-white transition-all duration-300 ease-out group-hover:text-xl group-hover:opacity-100 ' +
+                    (expandedIndex() === i ? 'text-xl opacity-100' : 'opacity-0')
+                  "
+                >
                   {{ reason.description }}
                 </p>
               </div>
@@ -59,6 +87,12 @@ interface Reason {
 })
 export class ReasonsSection {
   protected readonly assets = figmaAssets;
+
+  protected readonly expandedIndex = signal<number | null>(null);
+
+  protected toggle(index: number): void {
+    this.expandedIndex.set(this.expandedIndex() === index ? null : index);
+  }
 
   protected readonly reasons: Reason[] = [
     {

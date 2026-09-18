@@ -15,13 +15,13 @@ interface GalleryPhoto {
     @if (activeCategory() === 'All') {
       <section class="flex w-full flex-col gap-2.5 overflow-hidden md:aspect-[1440/915] md:flex-row">
         <div class="flex w-full min-h-0 flex-col gap-2.5 md:w-1/2">
-          <div class="relative min-h-0 aspect-[812/541] md:aspect-auto" style="flex: 541 1 0">
+          <div class="relative min-h-0 aspect-[812/541] md:aspect-auto md:[flex:541_1_0]">
             <img [src]="assets.galleryPhoto1" alt="Smart classroom" class="size-full object-cover" />
             <span class="absolute right-2.5 bottom-2.5 rounded bg-[#525252] px-2.5 py-1.5 text-xs font-medium text-white">
               Smart Classrooms
             </span>
           </div>
-          <div class="relative min-h-0 aspect-[616/374] md:aspect-auto" style="flex: 374 1 0">
+          <div class="relative min-h-0 aspect-[616/374] md:aspect-auto md:[flex:374_1_0]">
             <img [src]="assets.galleryPhoto3" alt="Sports day" class="size-full object-cover" />
             <span class="absolute right-2.5 bottom-2.5 rounded bg-[#525252] px-2.5 py-1.5 text-xs font-medium text-white">
               Sports
@@ -30,19 +30,19 @@ interface GalleryPhoto {
         </div>
 
         <div class="flex w-full min-h-0 flex-col gap-2.5 md:w-1/2">
-          <div class="relative min-h-0 aspect-[628/541] md:aspect-auto" style="flex: 541 1 0">
+          <div class="relative min-h-0 aspect-[628/541] md:aspect-auto md:[flex:541_1_0]">
             <img [src]="assets.galleryPhoto2" alt="Campus life" class="size-full object-cover" />
             <span class="absolute right-2.5 bottom-2.5 rounded bg-[#525252] px-2.5 py-1.5 text-xs font-medium text-white">
               Campus Life
             </span>
           </div>
-          <div class="relative min-h-0 aspect-[824/187] md:aspect-auto" style="flex: 187 1 0">
+          <div class="relative min-h-0 aspect-[824/187] md:aspect-auto md:[flex:187_1_0]">
             <img [src]="assets.galleryPhoto4" alt="Arts and crafts" class="size-full object-cover" />
             <span class="absolute right-2.5 bottom-2.5 rounded bg-[#525252] px-2.5 py-1.5 text-xs font-medium text-white">
               Arts & Crafts
             </span>
           </div>
-          <div class="relative min-h-0 aspect-[824/187] md:aspect-auto" style="flex: 187 1 0">
+          <div class="relative min-h-0 aspect-[824/187] md:aspect-auto md:[flex:187_1_0]">
             <img [src]="assets.galleryPhoto5" alt="Students in class" class="size-full object-cover" />
             <span class="absolute right-2.5 bottom-2.5 rounded bg-[#525252] px-2.5 py-1.5 text-xs font-medium text-white">
               Students

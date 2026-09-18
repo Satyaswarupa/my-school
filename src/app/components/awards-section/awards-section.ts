@@ -23,7 +23,7 @@ interface AwardItem {
         </h2>
       </div>
 
-      <div class="relative flex w-full flex-col items-start justify-center gap-10 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-24">
+      <div class="relative flex w-full flex-col items-start justify-center gap-10 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-16 lg:gap-32">
         @for (award of awards; track award.caption) {
           <div class="flex w-full max-w-[280px] flex-col items-center gap-6">
             <img [src]="award.image" alt="" class="aspect-square w-full rounded-full object-cover" />

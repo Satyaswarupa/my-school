@@ -7,7 +7,7 @@ import { figmaAssets } from '../../shared/figma-assets';
   imports: [SiteHeader],
   template: `
     <section class="relative overflow-hidden bg-white">
-      <img [src]="assets.aboutHeroTexture" alt="" class="pointer-events-none absolute inset-x-0 top-0 h-[396px] w-full object-cover opacity-10" />
+      <img [src]="assets.aboutHeroTexture" alt="" class="pointer-events-none absolute inset-0 size-full object-cover opacity-10" />
       <p class="pointer-events-none absolute top-[190px] left-[calc(41.67%+21px)] hidden w-[850px] text-[260px] leading-none font-bold whitespace-nowrap text-black/5 select-none md:block">
         ABOUT
       </p>

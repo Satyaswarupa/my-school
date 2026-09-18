@@ -13,7 +13,7 @@ interface Pillar {
   imports: [],
   template: `
     <section class="relative flex w-full flex-col items-start overflow-hidden px-6 py-10 md:px-[100px] md:py-16">
-      <img [src]="assets.visionPattern" alt="" class="pointer-events-none absolute inset-0 size-full object-cover opacity-20" />
+      <img [src]="assets.visionPattern" alt="" class="pointer-events-none absolute inset-0 size-full object-cover opacity-10" />
 
       <div class="relative flex w-full flex-col items-start gap-10">
         <div class="flex max-w-[555px] flex-col items-start gap-3.5">
@@ -45,7 +45,7 @@ interface Pillar {
                 >
                   {{ pillar.label }}
                 </p>
-                <p class="text-lg text-black">{{ pillar.description }}</p>
+                <p class="text-lg font-bold text-black">{{ pillar.description }}</p>
               </div>
             </div>
           }

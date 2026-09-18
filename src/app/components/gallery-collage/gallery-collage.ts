@@ -26,7 +26,38 @@ const CIRCLE_HEIGHT_PCT = 27.4;
         <div class="pointer-events-none absolute inset-0 bg-[rgba(12,26,29,0.3)]"></div>
       </div>
 
-      <div class="relative aspect-[1440/1050] w-full overflow-hidden bg-white">
+      <!-- Mobile: normal-flow layout — the absolute ring below only has room to work at md+ -->
+      <div class="flex flex-col items-center gap-8 bg-white px-6 py-10 md:hidden">
+        <div class="flex flex-col items-center gap-3.5 text-center">
+          <p class="text-brand-teal-deep text-lg font-medium">Creative Expression</p>
+          <h2 class="text-3xl leading-tight font-bold text-black">
+            Where Every Child <span class="text-brand-teal-deep">Creates.</span>
+          </h2>
+          <p class="max-w-[380px] text-base text-[#5e5e5e]">
+            Music, Dance, Drama, Art — every child finds their voice.
+          </p>
+        </div>
+
+        <div class="grid w-full grid-cols-3 gap-4">
+          @for (photo of collagePhotos; track photo.src) {
+            <div class="flex flex-col items-center gap-2">
+              <div class="aspect-square w-full overflow-hidden rounded-full">
+                <img [src]="photo.src" alt="Student life at My School" class="size-full object-cover" />
+              </div>
+              <span
+                class="text-center text-xs font-medium"
+                [class.text-brand-orange]="photo.accent === 'orange'"
+                [class.text-brand-teal]="photo.accent === 'teal'"
+              >
+                {{ photo.label }}
+              </span>
+            </div>
+          }
+        </div>
+      </div>
+
+      <!-- Tablet/desktop: the original circular ring around the centered text -->
+      <div class="relative hidden aspect-[1440/1050] w-full overflow-hidden bg-white md:block">
         <img [src]="assets.collageBg" alt="" class="absolute inset-0 size-full object-cover opacity-30" />
 
         @for (photo of collagePhotos; track photo.src) {

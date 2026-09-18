@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
+import { Router } from '@angular/router';
 import { figmaAssets } from '../../shared/figma-assets';
 
 @Component({
@@ -37,14 +38,23 @@ import { figmaAssets } from '../../shared/figma-assets';
               <p class="w-full text-sm text-[#dedede]">
                 Parenting tips, events &amp; school updates — straight to your inbox.
               </p>
-              <div class="flex w-full items-stretch">
+              <form class="flex w-full items-stretch" (submit)="goToEnquiry(); $event.preventDefault()">
                 <div class="flex flex-1 items-center border border-[#5a7a80] px-2.5 py-5">
-                  <span class="text-sm text-[#b3b3b3]">your@email.com</span>
+                  <input
+                    type="email"
+                    placeholder="your@email.com"
+                    [value]="footerEmail()"
+                    (input)="footerEmail.set($any($event.target).value)"
+                    class="w-full bg-transparent text-sm text-white outline-none placeholder:text-[#b3b3b3]"
+                  />
                 </div>
-                <div class="bg-brand-orange flex w-[145px] shrink-0 items-center justify-center px-4 py-5">
+                <button
+                  type="submit"
+                  class="bg-brand-orange flex w-[145px] shrink-0 cursor-pointer items-center justify-center px-4 py-5"
+                >
                   <span class="text-sm font-semibold text-white">Get Started</span>
-                </div>
-              </div>
+                </button>
+              </form>
             </div>
             <p class="text-sm text-[#dedede]">Mon – Sat · 8:00 am – 4:00 pm</p>
           </div>
@@ -68,6 +78,9 @@ import { figmaAssets } from '../../shared/figma-assets';
 })
 export class SiteFooter {
   protected readonly assets = figmaAssets;
+  private readonly router = inject(Router);
+
+  protected readonly footerEmail = signal('');
 
   protected readonly navLinks: string[] = [
     'Home',
@@ -78,4 +91,12 @@ export class SiteFooter {
     'Blog',
     'Contact',
   ];
+
+  protected goToEnquiry(): void {
+    const email = this.footerEmail().trim();
+    this.router.navigate(['/admissions'], {
+      queryParams: email ? { email } : {},
+      fragment: 'lets-connect',
+    });
+  }
 }

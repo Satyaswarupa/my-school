@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { figmaAssets } from '../../shared/figma-assets';
 
 @Component({
   selector: 'app-admissions-cta-section',
-  imports: [],
+  imports: [RouterLink],
   template: `
     <section class="flex w-full flex-col items-stretch lg:flex-row">
       <div class="relative flex w-full flex-col items-start justify-center gap-2.5 overflow-hidden bg-[#f6f6f6] px-6 py-16 md:px-[100px] lg:w-[45%] lg:[clip-path:polygon(0_0,100%_0,84%_100%,0_100%)]">
@@ -38,7 +39,8 @@ import { figmaAssets } from '../../shared/figma-assets';
             <img [src]="assets.callIcon" alt="" class="size-4" />
           </a>
           <a
-            href="#"
+            routerLink="/admissions"
+            fragment="lets-connect"
             class="text-brand-orange flex w-full items-center justify-center gap-2 rounded-md bg-white px-10 py-5 text-base font-medium"
           >
             Apply Now

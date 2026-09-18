@@ -35,7 +35,7 @@ interface BranchCard {
                   {{ card.tag }}
                 </span>
               </div>
-              <p class="text-3xl leading-tight font-bold sm:text-[40px]" [class.text-black]="card.theme === 'light'" [class.text-white]="card.theme === 'orange'">
+              <p class="text-3xl leading-tight font-bold sm:min-h-[110px] sm:text-[40px]" [class.text-black]="card.theme === 'light'" [class.text-white]="card.theme === 'orange'">
                 <span class="sm:text-[44px]">{{ card.titleLine1 }}</span> {{ card.titleLine2 }}
               </p>
             </div>
@@ -43,7 +43,7 @@ interface BranchCard {
             <div class="flex flex-col items-start gap-5">
               <div class="flex items-start gap-3">
                 <img [src]="card.locationIcon" alt="" class="size-6 shrink-0" />
-                <p class="text-lg" [class.text-black]="card.theme === 'light'" [class.text-white]="card.theme === 'orange'">
+                <p class="text-lg sm:min-h-[56px]" [class.text-black]="card.theme === 'light'" [class.text-white]="card.theme === 'orange'">
                   {{ card.address }}
                 </p>
               </div>
