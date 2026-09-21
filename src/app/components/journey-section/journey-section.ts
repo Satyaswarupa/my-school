@@ -22,13 +22,13 @@ import { figmaAssets } from '../../shared/figma-assets';
                 />
               </div>
             </div>
-            <h3 class="text-4xl font-bold text-black md:text-[48px]">Pimpri, Pune</h3>
+            <h3 class="text-[48px] font-bold text-black">Pimpri, Pune</h3>
           </div>
           <div class="flex items-center gap-3">
             <img [src]="assets.lineShortAlt" alt="" class="h-px w-[46px]" />
-            <span class="text-brand-orange text-base font-medium">ORIGIN CAMPUS</span>
+            <span class="text-brand-orange text-[16px] font-medium">ORIGIN CAMPUS</span>
           </div>
-          <p class="text-lg text-black">
+          <p class="text-[18px] text-black">
             Founded with a clear vision — to build a school that goes beyond textbooks and shapes real human beings.
             Started with a handful of classrooms and an ocean of ambition.
           </p>

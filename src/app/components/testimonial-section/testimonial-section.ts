@@ -14,11 +14,11 @@ import { figmaAssets } from '../../shared/figma-assets';
           <div class="flex flex-col items-start gap-2">
             <div class="flex items-center gap-3.5">
               <img [src]="assets.lineShortAlt" alt="" class="h-px w-[46px]" />
-              <span class="text-lg font-medium text-white">Voices of Trust</span>
+              <span class="text-[18px] font-medium text-white">Voices of Trust</span>
             </div>
             <img [src]="assets.quote" alt="" class="size-10 md:size-12" />
           </div>
-          <p class="max-w-[850px] text-2xl leading-snug font-semibold text-white md:text-4xl">
+          <p class="w-full max-w-[1150px] text-[48px] leading-snug font-semibold text-white">
             My daughter has transformed completely. She speaks with confidence, thinks critically, and genuinely
             loves going to school every day.
           </p>
@@ -26,11 +26,11 @@ import { figmaAssets } from '../../shared/figma-assets';
 
         <div class="flex items-center gap-3">
           <div class="flex size-[50px] shrink-0 items-center justify-center rounded-full bg-[#61ffff]">
-            <span class="text-2xl text-white">P</span>
+            <span class="text-[24px] text-white">P</span>
           </div>
           <div class="flex flex-col gap-0.5">
-            <p class="text-xl text-white">Priya Sharma</p>
-            <p class="text-base text-[#cfcfcf]">Parent · Grade 5</p>
+            <p class="text-[22px] text-white">Priya Sharma</p>
+            <p class="text-[16px] text-[#cfcfcf]">Parent · Grade 5</p>
             <div class="flex items-center gap-0.5 pt-0.5">
               @for (star of stars; track star) {
                 <img [src]="assets.star" alt="" class="size-4" />

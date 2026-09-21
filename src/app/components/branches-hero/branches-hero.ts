@@ -14,13 +14,13 @@ import { figmaAssets } from '../../shared/figma-assets';
       <div class="relative flex flex-col items-start gap-3.5 px-6 pt-10 pb-16 md:px-[100px]">
         <div class="flex items-center gap-3">
           <img [src]="assets.lineShortAlt" alt="" class="h-px w-[46px]" />
-          <span class="text-brand-orange text-base font-medium">Our Footprint</span>
+          <span class="text-brand-orange text-[16px] font-medium">Our Footprint</span>
         </div>
         <div class="flex max-w-[917px] flex-col items-start gap-5 text-black">
-          <h1 class="text-4xl font-bold md:text-[48px]">
+          <h1 class="text-[48px] font-bold">
             Our Learning <span class="text-brand-orange">Hubs</span>
           </h1>
-          <p class="text-lg">
+          <p class="text-[18px]">
             Wherever you find us, you'll discover a learning environment built on trust, values, and academic
             excellence.
           </p>

@@ -21,28 +21,28 @@ type SubmitStatus = 'idle' | 'sending' | 'success' | 'error';
   template: `
     <section id="lets-connect" class="flex w-full scroll-mt-24 flex-col items-center gap-10 bg-white px-6 py-10 md:px-[100px] md:py-16 lg:flex-row lg:items-center lg:justify-between">
       <div class="flex w-full max-w-[558px] flex-col items-start gap-10">
-        <div class="flex flex-col items-start gap-[60px]">
+        <div class="flex flex-col items-start gap-3.5">
           <div class="flex items-center gap-3">
-            <img [src]="assets.lineShortAlt2" alt="" class="h-px w-[46px]" />
-            <span class="text-brand-teal text-lg font-medium">Send an Enquiry</span>
+            <span class="h-px w-[46px] bg-[#007381]"></span>
+            <span class="text-brand-teal text-[18px] font-medium">Send an Enquiry</span>
           </div>
-          <h2 class="text-4xl font-bold text-black md:text-[48px]">
+          <h2 class="text-[48px] font-bold text-black">
             Let's <span class="text-brand-teal">Connect</span>
           </h2>
         </div>
 
         <form #enquiryForm="ngForm" class="flex w-full flex-col items-center gap-10" (ngSubmit)="submit(enquiryForm)">
-          <div class="flex w-full flex-col items-start gap-[18px]">
+          <div class="flex w-full flex-col items-start gap-2.5">
             @for (field of fields; track field.model) {
-              <label class="flex w-full flex-col items-start gap-3.5">
-                <span class="text-brand-teal text-lg font-medium">{{ field.label }}</span>
+              <label class="flex w-full flex-col items-start gap-2">
+                <span class="text-brand-teal text-[18px] font-medium">{{ field.label }}</span>
                 <input
                   [type]="field.type"
                   [placeholder]="field.placeholder"
                   [name]="field.model"
                   [required]="field.required"
                   [(ngModel)]="formData[field.model]"
-                  class="w-full border-0 border-b border-[#d9d9d9] pb-2 text-sm text-[#474747] outline-none focus:border-brand-teal"
+                  class="w-full border-0 border-b border-[#d9d9d9] pb-2 text-[14px] text-[#474747] outline-none focus:border-brand-teal"
                 />
               </label>
             }
@@ -61,10 +61,10 @@ type SubmitStatus = 'idle' | 'sending' | 'success' | 'error';
           <button
             type="submit"
             [disabled]="status() === 'sending'"
-            class="bg-brand-orange flex items-center gap-2.5 self-start rounded p-5 text-lg font-medium text-[#f3f3f3] disabled:cursor-not-allowed disabled:opacity-60"
+            class="bg-brand-orange flex items-center gap-2 self-start rounded px-6 py-3 text-[15px] font-medium text-[#f3f3f3] disabled:cursor-not-allowed disabled:opacity-60"
           >
             {{ status() === 'sending' ? 'Sending…' : 'Submit Your Request' }}
-            <img [src]="assets.telegramIcon" alt="" class="size-6" />
+            <img [src]="assets.telegramIcon" alt="" class="size-5" />
           </button>
         </form>
       </div>
@@ -72,7 +72,7 @@ type SubmitStatus = 'idle' | 'sending' | 'success' | 'error';
       <img
         [src]="assets.admissionsFormIllustration"
         alt=""
-        class="aspect-[445/507] w-full max-w-[445px] object-cover"
+        class="h-[507px] w-[445px] max-w-full shrink-0 self-center object-contain object-center md:pr-6"
       />
     </section>
   `,

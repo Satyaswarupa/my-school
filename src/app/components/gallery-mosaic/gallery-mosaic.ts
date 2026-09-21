@@ -68,7 +68,7 @@ interface GalleryPhoto {
     }
 
     <div class="flex w-full items-center justify-center py-6">
-      <a href="#" class="text-brand-teal text-xl font-semibold underline">Many More Moments</a>
+      <a href="#" class="text-brand-teal text-[24px] font-semibold underline">Many More Moments</a>
     </div>
   `,
 })

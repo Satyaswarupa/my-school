@@ -17,7 +17,6 @@ import { figmaAssets } from '../../shared/figma-assets';
         aria-hidden="true"
         class="absolute inset-0 size-full object-cover"
       ></video>
-      <div class="absolute inset-0 bg-[rgba(5,16,18,0.64)]"></div>
 
       <app-site-header class="absolute inset-x-0 top-0 z-10" />
 

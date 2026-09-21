@@ -31,38 +31,38 @@ interface BranchCard {
             <div class="flex flex-col items-start gap-[60px]">
               <div class="flex items-center gap-3">
                 <img [src]="card.lineIcon" alt="" class="h-px w-[46px]" />
-                <span class="text-base font-medium" [class.text-black]="card.theme === 'light'" [class.text-white]="card.theme === 'orange'">
+                <span class="text-[16px] font-medium" [class.text-black]="card.theme === 'light'" [class.text-white]="card.theme === 'orange'">
                   {{ card.tag }}
                 </span>
               </div>
-              <p class="text-3xl leading-tight font-bold sm:min-h-[110px] sm:text-[40px]" [class.text-black]="card.theme === 'light'" [class.text-white]="card.theme === 'orange'">
-                <span class="sm:text-[44px]">{{ card.titleLine1 }}</span> {{ card.titleLine2 }}
+              <p class="text-[44px] leading-tight font-bold sm:min-h-[110px]" [class.text-black]="card.theme === 'light'" [class.text-white]="card.theme === 'orange'">
+                <span>{{ card.titleLine1 }}</span> {{ card.titleLine2 }}
               </p>
             </div>
 
             <div class="flex flex-col items-start gap-5">
               <div class="flex items-start gap-3">
                 <img [src]="card.locationIcon" alt="" class="size-6 shrink-0" />
-                <p class="text-lg sm:min-h-[56px]" [class.text-black]="card.theme === 'light'" [class.text-white]="card.theme === 'orange'">
+                <p class="text-[18px] sm:min-h-[56px]" [class.text-black]="card.theme === 'light'" [class.text-white]="card.theme === 'orange'">
                   {{ card.address }}
                 </p>
               </div>
               <div class="flex items-center gap-3">
                 <img [src]="card.callIcon" alt="" class="size-6" />
-                <p class="text-lg" [class.text-black]="card.theme === 'light'" [class.text-white]="card.theme === 'orange'">
+                <p class="text-[18px]" [class.text-black]="card.theme === 'light'" [class.text-white]="card.theme === 'orange'">
                   {{ card.phone }}
                 </p>
               </div>
             </div>
 
-            <p class="text-base" [class.text-[#323232]]="card.theme === 'light'" [class.text-[#dcdcdc]]="card.theme === 'orange'">
+            <p class="text-[18px]" [class.text-[#323232]]="card.theme === 'light'" [class.text-[#dcdcdc]]="card.theme === 'orange'">
               {{ card.amenities }}
             </p>
           </div>
 
           <div class="flex items-center gap-6">
-            <a href="#" class="rounded px-10 py-5 text-lg font-semibold" [class]="card.primaryBtnClass">Get Directions</a>
-            <a href="#" class="rounded px-10 py-5 text-lg font-semibold" [class]="card.secondaryBtnClass">Book Visit</a>
+            <a href="#" class="rounded px-10 py-5 text-[18px] font-semibold" [class]="card.primaryBtnClass">Get Directions</a>
+            <a href="#" class="rounded px-10 py-5 text-[18px] font-semibold" [class]="card.secondaryBtnClass">Book Visit</a>
           </div>
         </div>
       }

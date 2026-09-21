@@ -8,6 +8,7 @@ interface NavLink {
   label: string;
   href: string;
   routed: boolean;
+  external?: boolean;
 }
 
 @Component({
@@ -23,20 +24,35 @@ interface NavLink {
         </div>
       </a>
 
-      <nav class="hidden items-center gap-[18px] lg:flex">
+      <nav class="hidden items-center gap-8 lg:flex">
         @for (link of navLinks; track link.label) {
-          <a
-            [routerLink]="link.routed ? link.href : null"
-            [href]="link.routed ? null : link.href"
-            class="whitespace-nowrap text-sm"
-            [class.font-bold]="activeLink() === link.label"
-            [class.text-brand-orange]="activeLink() === link.label"
-            [class.font-semibold]="activeLink() !== link.label"
-            [class.text-white]="activeLink() !== link.label && variant() === 'overlay'"
-            [class.text-[#2a2a2a]]="activeLink() !== link.label && variant() === 'light'"
-          >
-            {{ link.label }}
-          </a>
+          @if (link.routed) {
+            <a
+              [routerLink]="link.href"
+              class="whitespace-nowrap text-[14px]"
+              [class.font-bold]="activeLink() === link.label"
+              [class.text-brand-orange]="activeLink() === link.label"
+              [class.font-semibold]="activeLink() !== link.label"
+              [class.text-white]="activeLink() !== link.label && variant() === 'overlay'"
+              [class.text-[#2a2a2a]]="activeLink() !== link.label && variant() === 'light'"
+            >
+              {{ link.label }}
+            </a>
+          } @else {
+            <a
+              [href]="link.href"
+              [attr.target]="link.external ? '_blank' : null"
+              [attr.rel]="link.external ? 'noopener noreferrer' : null"
+              class="whitespace-nowrap text-[14px]"
+              [class.font-bold]="activeLink() === link.label"
+              [class.text-brand-orange]="activeLink() === link.label"
+              [class.font-semibold]="activeLink() !== link.label"
+              [class.text-white]="activeLink() !== link.label && variant() === 'overlay'"
+              [class.text-[#2a2a2a]]="activeLink() !== link.label && variant() === 'light'"
+            >
+              {{ link.label }}
+            </a>
+          }
         }
       </nav>
 
@@ -101,19 +117,35 @@ interface NavLink {
           [class.border-black/10]="variant() === 'light'"
         >
           @for (link of navLinks; track link.label) {
-            <a
-              [routerLink]="link.routed ? link.href : null"
-              [href]="link.routed ? null : link.href"
-              class="rounded px-3 py-3 text-base"
-              [class.font-bold]="activeLink() === link.label"
-              [class.text-brand-orange]="activeLink() === link.label"
-              [class.font-semibold]="activeLink() !== link.label"
-              [class.text-white]="activeLink() !== link.label && variant() === 'overlay'"
-              [class.text-[#2a2a2a]]="activeLink() !== link.label && variant() === 'light'"
-              (click)="menuOpen.set(false)"
-            >
-              {{ link.label }}
-            </a>
+            @if (link.routed) {
+              <a
+                [routerLink]="link.href"
+                class="rounded px-3 py-3 text-base"
+                [class.font-bold]="activeLink() === link.label"
+                [class.text-brand-orange]="activeLink() === link.label"
+                [class.font-semibold]="activeLink() !== link.label"
+                [class.text-white]="activeLink() !== link.label && variant() === 'overlay'"
+                [class.text-[#2a2a2a]]="activeLink() !== link.label && variant() === 'light'"
+                (click)="menuOpen.set(false)"
+              >
+                {{ link.label }}
+              </a>
+            } @else {
+              <a
+                [href]="link.href"
+                [attr.target]="link.external ? '_blank' : null"
+                [attr.rel]="link.external ? 'noopener noreferrer' : null"
+                class="rounded px-3 py-3 text-base"
+                [class.font-bold]="activeLink() === link.label"
+                [class.text-brand-orange]="activeLink() === link.label"
+                [class.font-semibold]="activeLink() !== link.label"
+                [class.text-white]="activeLink() !== link.label && variant() === 'overlay'"
+                [class.text-[#2a2a2a]]="activeLink() !== link.label && variant() === 'light'"
+                (click)="menuOpen.set(false)"
+              >
+                {{ link.label }}
+              </a>
+            }
           }
 
           <div class="my-2 flex items-center gap-2 px-3">
@@ -160,6 +192,6 @@ export class SiteHeader {
     { label: 'Admissions & Academics', href: '/admissions', routed: true },
     { label: 'Gallery', href: '/gallery', routed: true },
     { label: 'Our Branches', href: '/branches', routed: true },
-    { label: 'Blog', href: '#', routed: false },
+    { label: 'Blog', href: 'https://www.monachadda.com/blog', routed: false, external: true },
   ];
 }

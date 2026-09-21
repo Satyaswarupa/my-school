@@ -11,15 +11,15 @@ interface FaqItem {
   imports: [],
   template: `
     <section class="relative flex w-full flex-col items-start overflow-hidden bg-[#0c1a1d] px-6 py-10 md:px-[100px] md:py-14">
-      <p class="pointer-events-none absolute top-[65%] right-6 -translate-y-1/2 text-[100px] leading-none font-bold whitespace-nowrap text-white/5 select-none sm:text-[140px] md:right-[100px] md:text-[172px]">
+      <p class="pointer-events-none absolute top-[70%] right-6 -translate-y-1/2 text-[172px] leading-none font-bold whitespace-nowrap text-white/5 select-none md:right-[100px]">
         FAQ
       </p>
       <div class="relative flex w-full flex-col items-start gap-3.5 md:max-w-[254px]">
         <div class="flex items-center gap-3.5">
           <img [src]="assets.lineShortAlt3" alt="" class="h-px w-[46px]" />
-          <span class="text-lg font-medium text-white">Questions & Answers</span>
+          <span class="text-[18px] font-medium text-white">Questions & Answers</span>
         </div>
-        <h2 class="text-4xl font-bold text-white md:text-[48px]">
+        <h2 class="text-[48px] leading-tight font-bold text-white">
           Got a<br />
           <span class="text-brand-orange">Question?</span>
         </h2>
@@ -36,7 +36,7 @@ interface FaqItem {
               [attr.aria-expanded]="openIndex() === i"
               (click)="toggle(i)"
             >
-              <span class="text-xl font-semibold text-black">{{ faq.question }}</span>
+              <span class="text-[18px] font-semibold text-black">{{ faq.question }}</span>
               <img
                 [src]="assets.chevronDown"
                 alt=""

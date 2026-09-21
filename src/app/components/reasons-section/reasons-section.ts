@@ -20,9 +20,9 @@ interface Reason {
       <div class="flex flex-col gap-3.5">
         <div class="flex items-center gap-3.5">
           <img [src]="assets.lineShortAlt2" alt="" class="h-px w-[46px]" />
-          <span class="text-lg font-medium text-white">Why Choose Us</span>
+          <span class="text-[18px] font-medium text-white">Why Choose Us</span>
         </div>
-        <h2 class="text-4xl font-bold text-white md:text-[48px]">
+        <h2 class="text-[48px] font-bold text-white">
           5 Reasons Parents<br />
           <span class="text-brand-orange">Never Look Back</span>
         </h2>
@@ -48,8 +48,8 @@ interface Reason {
 
             <div class="relative flex w-full items-center justify-between">
               <div class="flex items-start gap-5 font-bold text-white md:gap-20">
-                <p class="text-2xl">{{ reason.number }}</p>
-                <p class="text-2xl md:text-[30px]">
+                <p class="text-[24px]">{{ reason.number }}</p>
+                <p class="text-[30px]">
                   @for (segment of reason.segments; track segment.text) {
                     <span [class.text-brand-orange]="segment.accent === 'orange'">{{ segment.text }}</span>
                   }
@@ -71,8 +71,8 @@ interface Reason {
               <div class="overflow-hidden">
                 <p
                   [class]="
-                    'pt-5 text-xs text-white transition-all duration-300 ease-out group-hover:text-xl group-hover:opacity-100 ' +
-                    (expandedIndex() === i ? 'text-xl opacity-100' : 'opacity-0')
+                    'pt-5 text-[14px] text-white transition-opacity duration-300 ease-out group-hover:opacity-100 ' +
+                    (expandedIndex() === i ? 'opacity-100' : 'opacity-0')
                   "
                 >
                   {{ reason.description }}

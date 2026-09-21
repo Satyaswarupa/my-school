@@ -19,9 +19,9 @@ interface Pillar {
         <div class="flex max-w-[555px] flex-col items-start gap-3.5">
           <div class="flex items-center gap-3">
             <img [src]="assets.lineShortAlt" alt="" class="h-px w-[46px]" />
-            <span class="text-brand-teal text-lg font-medium">What Drives us</span>
+            <span class="text-brand-teal text-[18px] font-medium">What Drives us</span>
           </div>
-          <h2 class="text-4xl font-bold text-black md:text-[48px]">
+          <h2 class="text-[48px] font-bold text-black">
             <span class="text-brand-teal">Vision.</span> <span class="text-brand-orange">Mission</span>.
             <span class="text-brand-teal">Values.</span>
           </h2>
@@ -31,7 +31,7 @@ interface Pillar {
           @for (pillar of pillars; track pillar.label) {
             <div class="flex w-full items-start gap-5 md:items-center">
               <p
-                class="w-20 shrink-0 text-6xl leading-none font-bold sm:text-[80px] md:w-28 md:text-[130px]"
+                class="w-28 shrink-0 text-[130px] leading-none font-bold"
                 [class.text-brand-teal]="pillar.labelColor === 'teal'"
                 [class.text-brand-orange]="pillar.labelColor === 'orange'"
               >
@@ -39,13 +39,13 @@ interface Pillar {
               </p>
               <div class="flex flex-col items-start gap-3">
                 <p
-                  class="text-xl font-semibold"
+                  class="text-[20px] font-semibold"
                   [class.text-brand-teal]="pillar.labelColor === 'teal'"
                   [class.text-brand-orange]="pillar.labelColor === 'orange'"
                 >
                   {{ pillar.label }}
                 </p>
-                <p class="text-lg font-bold text-black">{{ pillar.description }}</p>
+                <p class="text-[18px] font-normal text-black">{{ pillar.description }}</p>
               </div>
             </div>
           }

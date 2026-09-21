@@ -15,12 +15,12 @@ import { figmaAssets } from '../../shared/figma-assets';
               <img [src]="assets.lineShort" alt="" class="h-px w-[46px] invert md:invert-0" />
               <p class="text-brand-orange text-lg font-medium md:text-white">Est. 2012 · About Us</p>
             </div>
-            <h1 class="text-4xl leading-tight font-bold text-black md:text-[48px] md:text-white">
+            <h1 class="text-[48px] leading-tight font-bold text-black md:text-white">
               Bridging Tradition<br />
               with Tomorrow
             </h1>
           </div>
-          <div class="flex flex-col gap-4 text-lg text-[#3d3d3d] md:text-xl md:text-[#f3f3f3]">
+          <div class="flex flex-col gap-4 text-[20px] text-[#3d3d3d] md:text-[#f3f3f3]">
             <p>
               Established in 2012 in Pimpri and now rooted in Wakad, My School is a learner-centric CBSE
               institution committed to nurturing confident, compassionate, and future-ready individuals.
@@ -42,7 +42,7 @@ import { figmaAssets } from '../../shared/figma-assets';
         <img
           [src]="assets.creativeSideImage"
           alt="Students at My School"
-          class="h-[300px] w-full rounded-lg object-cover md:h-[480px] lg:w-[720px] lg:shrink-0 lg:rounded-none"
+          class="h-[300px] w-full rounded-lg object-cover md:h-[480px] lg:mt-16 lg:w-[720px] lg:shrink-0 lg:rounded-none"
         />
       </div>
     </section>

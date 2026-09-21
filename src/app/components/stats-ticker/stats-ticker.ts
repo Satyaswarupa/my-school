@@ -15,12 +15,16 @@ const DEFAULT_BADGES: string[] = [
   selector: 'app-stats-ticker',
   imports: [],
   template: `
-    <div class="bg-brand-teal-dark w-full overflow-x-auto">
-      <ul class="flex w-full min-w-max items-center justify-between gap-10 px-7 py-2.5 text-base whitespace-nowrap text-white" [class.tracking-[1.6px]]="!bulleted()">
-        @for (badge of badges(); track badge) {
-          <li>{{ badge }}</li>
+    <div class="bg-brand-teal-dark w-full overflow-hidden">
+      <div class="animate-marquee flex w-max items-center py-2.5 text-base whitespace-nowrap text-white" [class.tracking-[1.6px]]="!bulleted()">
+        @for (badge of [badges(), badges()]; track $index) {
+          <ul class="flex items-center gap-10 pr-10">
+            @for (item of badge; track $index) {
+              <li>{{ item }}</li>
+            }
+          </ul>
         }
-      </ul>
+      </div>
     </div>
   `,
 })

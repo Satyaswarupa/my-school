@@ -18,14 +18,14 @@ import { figmaAssets } from '../../shared/figma-assets';
         <div class="flex flex-col gap-3.5">
           <div class="flex items-center gap-3.5">
             <img [src]="assets.lineShortAlt" alt="" class="h-px w-[46px]" />
-            <span class="text-brand-orange text-lg font-medium">Who We Are</span>
+            <span class="text-brand-orange text-[18px] font-medium">Who We Are</span>
           </div>
-          <h1 class="max-w-[680px] text-4xl leading-tight font-bold text-black md:text-[48px]">
+          <h1 class="max-w-[680px] text-[48px] leading-tight font-bold text-black">
             Shaping <span class="text-brand-orange">Stories</span><br />
             Since <span class="text-brand-teal">2012</span>
           </h1>
         </div>
-        <p class="max-w-[680px] text-lg text-black">
+        <p class="max-w-[680px] text-[18px] text-black">
           From Pimpri to Wakad — My School has spent over a decade nurturing curious, confident, and compassionate
           individuals.
         </p>

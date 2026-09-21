@@ -16,9 +16,9 @@ import { figmaAssets } from '../../shared/figma-assets';
       <div class="relative flex flex-col items-start gap-3.5 px-6 pt-6 pb-4 md:px-[100px]">
         <div class="flex items-center gap-3">
           <img [src]="assets.lineShortAlt" alt="" class="h-px w-[46px]" />
-          <span class="text-brand-orange text-lg font-medium">Admissions & Academics</span>
+          <span class="text-brand-orange text-[18px] font-medium">Admissions & Academics</span>
         </div>
-        <h1 class="max-w-[380px] text-4xl leading-tight font-bold text-black md:text-[48px]">
+        <h1 class="max-w-[380px] text-[48px] leading-tight font-bold text-black">
           Seats Are <span class="text-brand-orange">Filling</span><br />
           <span class="text-brand-teal">Fast.</span>
         </h1>

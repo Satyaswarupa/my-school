@@ -16,15 +16,15 @@ import { figmaAssets } from '../../shared/figma-assets';
               <span class="bg-brand-teal px-[5px] py-[5px] text-lg font-bold text-white">SCHOOL</span>
             </div>
           </div>
-          <p class="text-base whitespace-pre-wrap text-[#dedede]">
+          <p class="text-[16px] whitespace-pre-wrap text-[#dedede]">
             Learning Beyond Academics. Growing Beyond Expectations. A learner-centric CBSE institution serving Pune
             since 2012.
           </p>
         </div>
 
-        <div class="flex w-[90px] shrink-0 flex-col items-start gap-10">
-          <p class="text-brand-orange w-full text-base font-medium">Navigation</p>
-          <div class="flex w-full flex-col items-start gap-3 text-sm text-[#dedede]">
+        <div class="flex w-[180px] shrink-0 flex-col items-start gap-10">
+          <p class="text-brand-orange w-full text-[16px] font-medium">Navigation</p>
+          <div class="flex w-full flex-col items-start gap-5 text-[14px] text-[#dedede]">
             @for (link of navLinks; track link) {
               <p class="w-full">{{ link }}</p>
             }
@@ -35,7 +35,7 @@ import { figmaAssets } from '../../shared/figma-assets';
           <p class="text-brand-orange text-base font-medium">Blog</p>
           <div class="flex w-full flex-col items-start gap-5">
             <div class="flex w-full flex-col items-start gap-5">
-              <p class="w-full text-sm text-[#dedede]">
+              <p class="w-full text-[16px] text-[#dedede]">
                 Parenting tips, events &amp; school updates — straight to your inbox.
               </p>
               <form class="flex w-full items-stretch" (submit)="goToEnquiry(); $event.preventDefault()">
@@ -85,11 +85,10 @@ export class SiteFooter {
   protected readonly navLinks: string[] = [
     'Home',
     'About Us',
-    'Admissions',
+    'Admissions & Academics',
     'Gallery',
     'Our Branches',
     'Blog',
-    'Contact',
   ];
 
   protected goToEnquiry(): void {

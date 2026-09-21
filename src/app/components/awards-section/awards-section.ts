@@ -16,9 +16,9 @@ interface AwardItem {
       <div class="flex max-w-[517px] flex-col items-start gap-3.5">
         <div class="flex items-center gap-3">
           <img [src]="assets.lineShortAlt" alt="" class="h-px w-[46px]" />
-          <span class="text-brand-teal text-lg font-medium">Achievements</span>
+          <span class="text-brand-teal text-[18px] font-medium">Achievements</span>
         </div>
-        <h2 class="text-4xl font-bold text-black md:text-[48px]">
+        <h2 class="text-[48px] font-bold text-black">
           Awards &amp; <span class="text-brand-teal">Recognition</span>
         </h2>
       </div>
