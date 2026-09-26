@@ -17,7 +17,7 @@ interface FaqItem {
       <div class="relative flex w-full flex-col items-start gap-3.5 md:max-w-[254px]">
         <div class="flex items-center gap-3.5">
           <img [src]="assets.lineShortAlt3" alt="" class="h-px w-[46px]" />
-          <span class="text-[18px] font-medium text-white">Questions & Answers</span>
+          <span class="text-[22px] font-medium whitespace-nowrap text-white">Questions & Answers</span>
         </div>
         <h2 class="text-[48px] leading-tight font-bold text-white">
           Got a<br />
@@ -36,11 +36,11 @@ interface FaqItem {
               [attr.aria-expanded]="openIndex() === i"
               (click)="toggle(i)"
             >
-              <span class="text-[18px] font-semibold text-black">{{ faq.question }}</span>
+              <span class="text-[20px] font-semibold text-black">{{ faq.question }}</span>
               <img
                 [src]="assets.chevronDown"
                 alt=""
-                class="size-9 shrink-0 transition-transform"
+                class="size-12 shrink-0 transition-transform"
                 [class.rotate-180]="openIndex() !== i"
               />
             </button>

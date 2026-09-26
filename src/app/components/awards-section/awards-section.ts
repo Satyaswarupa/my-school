@@ -16,7 +16,7 @@ interface AwardItem {
       <div class="flex max-w-[517px] flex-col items-start gap-3.5">
         <div class="flex items-center gap-3">
           <img [src]="assets.lineShortAlt" alt="" class="h-px w-[46px]" />
-          <span class="text-brand-teal text-[18px] font-medium">Achievements</span>
+          <span class="text-brand-teal text-[22px] font-medium">Achievements</span>
         </div>
         <h2 class="text-[48px] font-bold text-black">
           Awards &amp; <span class="text-brand-teal">Recognition</span>
@@ -27,7 +27,7 @@ interface AwardItem {
         @for (award of awards; track award.caption) {
           <div class="flex w-full max-w-[280px] flex-col items-center gap-6">
             <img [src]="award.image" alt="" class="aspect-square w-full rounded-full object-cover" />
-            <p class="text-center text-lg text-black">{{ award.caption }}</p>
+            <p class="text-center text-[20px] text-black">{{ award.caption }}</p>
           </div>
         }
       </div>

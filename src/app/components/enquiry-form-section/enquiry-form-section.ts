@@ -24,7 +24,7 @@ type SubmitStatus = 'idle' | 'sending' | 'success' | 'error';
         <div class="flex flex-col items-start gap-3.5">
           <div class="flex items-center gap-3">
             <span class="h-px w-[46px] bg-[#007381]"></span>
-            <span class="text-brand-teal text-[18px] font-medium">Send an Enquiry</span>
+            <span class="text-brand-teal text-[22px] font-medium">Send an Enquiry</span>
           </div>
           <h2 class="text-[48px] font-bold text-black">
             Let's <span class="text-brand-teal">Connect</span>
@@ -35,25 +35,25 @@ type SubmitStatus = 'idle' | 'sending' | 'success' | 'error';
           <div class="flex w-full flex-col items-start gap-2.5">
             @for (field of fields; track field.model) {
               <label class="flex w-full flex-col items-start gap-2">
-                <span class="text-brand-teal text-[18px] font-medium">{{ field.label }}</span>
+                <span class="text-brand-teal text-[20px] font-medium">{{ field.label }}</span>
                 <input
                   [type]="field.type"
                   [placeholder]="field.placeholder"
                   [name]="field.model"
                   [required]="field.required"
                   [(ngModel)]="formData[field.model]"
-                  class="w-full border-0 border-b border-[#d9d9d9] pb-2 text-[14px] text-[#474747] outline-none focus:border-brand-teal"
+                  class="w-full border-0 border-b border-[#d9d9d9] pb-2 text-[18px] text-[#474747] outline-none focus:border-brand-teal"
                 />
               </label>
             }
           </div>
 
           @if (status() === 'success') {
-            <p class="text-brand-teal w-full text-sm font-medium">
+            <p class="text-brand-teal w-full text-base font-medium">
               Thanks! Your enquiry has been sent — we'll get back to you shortly.
             </p>
           } @else if (status() === 'error') {
-            <p class="w-full text-sm font-medium text-red-600">
+            <p class="w-full text-base font-medium text-red-600">
               Something went wrong sending your enquiry. Please try again in a moment.
             </p>
           }
@@ -61,10 +61,10 @@ type SubmitStatus = 'idle' | 'sending' | 'success' | 'error';
           <button
             type="submit"
             [disabled]="status() === 'sending'"
-            class="bg-brand-orange flex items-center gap-2 self-start rounded px-6 py-3 text-[15px] font-medium text-[#f3f3f3] disabled:cursor-not-allowed disabled:opacity-60"
+            class="bg-brand-orange flex items-center gap-2 self-start rounded px-6 py-3 text-[18px] font-medium text-[#f3f3f3] disabled:cursor-not-allowed disabled:opacity-60"
           >
             {{ status() === 'sending' ? 'Sending…' : 'Submit Your Request' }}
-            <img [src]="assets.telegramIcon" alt="" class="size-5" />
+            <img [src]="assets.telegramIcon" alt="" class="size-6" />
           </button>
         </form>
       </div>
@@ -72,7 +72,7 @@ type SubmitStatus = 'idle' | 'sending' | 'success' | 'error';
       <img
         [src]="assets.admissionsFormIllustration"
         alt=""
-        class="h-[507px] w-[445px] max-w-full shrink-0 self-center object-contain object-center md:pr-6"
+        class="h-[480px] w-[445px] max-w-full shrink-0 self-center object-contain object-center md:h-[740px] md:w-[560px] md:mr-32 md:object-fill"
       />
     </section>
   `,

@@ -31,7 +31,7 @@ interface BranchCard {
             <div class="flex flex-col items-start gap-[60px]">
               <div class="flex items-center gap-3">
                 <img [src]="card.lineIcon" alt="" class="h-px w-[46px]" />
-                <span class="text-[16px] font-medium" [class.text-black]="card.theme === 'light'" [class.text-white]="card.theme === 'orange'">
+                <span class="text-[20px] font-medium" [class.text-black]="card.theme === 'light'" [class.text-white]="card.theme === 'orange'">
                   {{ card.tag }}
                 </span>
               </div>
@@ -43,9 +43,7 @@ interface BranchCard {
             <div class="flex flex-col items-start gap-5">
               <div class="flex items-start gap-3">
                 <img [src]="card.locationIcon" alt="" class="size-6 shrink-0" />
-                <p class="text-[18px] sm:min-h-[56px]" [class.text-black]="card.theme === 'light'" [class.text-white]="card.theme === 'orange'">
-                  {{ card.address }}
-                </p>
+                <p class="text-[18px] whitespace-pre-line sm:min-h-[56px]" [class.text-black]="card.theme === 'light'" [class.text-white]="card.theme === 'orange'">{{ card.address }}</p>
               </div>
               <div class="flex items-center gap-3">
                 <img [src]="card.callIcon" alt="" class="size-6" />
@@ -93,7 +91,7 @@ export class BranchCardsSection {
       tag: 'Orignal Campus · Est. 2012',
       titleLine1: 'First School,',
       titleLine2: 'Pimpri Campus',
-      address: 'School Road, Pimpri Station, Pimpri, Pune 411018',
+      address: 'School Road, Pimpri Station, Pimpri,\nPune 411018',
       phone: '+91-9876543210',
       amenities: '· Smart Classrooms  · Library   · CCTV   · Digital Boards  · RO Water',
       locationIcon: figmaAssets.mdiLocationWhite,

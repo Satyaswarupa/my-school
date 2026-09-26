@@ -26,7 +26,7 @@ import { figmaAssets } from '../../shared/figma-assets';
           </div>
           <div class="flex items-center gap-3">
             <img [src]="assets.lineShortAlt" alt="" class="h-px w-[46px]" />
-            <span class="text-brand-orange text-[16px] font-medium">ORIGIN CAMPUS</span>
+            <span class="text-brand-orange text-[20px] font-medium">ORIGIN CAMPUS</span>
           </div>
           <p class="text-[18px] text-black">
             Founded with a clear vision — to build a school that goes beyond textbooks and shapes real human beings.
@@ -47,7 +47,7 @@ import { figmaAssets } from '../../shared/figma-assets';
           </div>
           <div class="flex items-center gap-3">
             <img [src]="assets.lineShortAlt" alt="" class="h-px w-[46px]" />
-            <span class="text-brand-teal text-base font-medium">MAIN CAMPUS TODAY</span>
+            <span class="text-brand-teal text-[20px] font-medium">MAIN CAMPUS TODAY</span>
           </div>
           <p class="text-lg text-black">
             Expanded to Wakad, becoming a thriving campus with smart classrooms, sports ground, robotics lab, and

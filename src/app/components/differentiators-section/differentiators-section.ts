@@ -16,7 +16,7 @@ interface Differentiator {
         <div class="flex flex-col gap-3.5">
           <div class="flex w-full items-center gap-3.5">
             <img [src]="assets.lineShortAlt" alt="" class="h-px w-[46px]" />
-            <span class="text-brand-teal-deep text-[18px] font-medium">Beyond The Curriculum</span>
+            <span class="text-brand-teal-deep text-[22px] font-medium">Beyond The Curriculum</span>
           </div>
           <div class="flex w-full flex-col items-start">
             <h2 class="text-[48px] font-bold text-black">
@@ -25,7 +25,7 @@ interface Differentiator {
             <img [src]="assets.underlineSquiggle" alt="" class="h-[7px] w-[206px]" />
           </div>
         </div>
-        <p class="w-full text-left text-[16px] text-[#5e5e5e]">Six signature programmes you won't find in any typical school.</p>
+        <p class="w-full text-left text-[18px] text-[#5e5e5e]">Six signature programmes you won't find in any typical school.</p>
       </div>
 
       <div class="flex w-full flex-col items-end gap-5">

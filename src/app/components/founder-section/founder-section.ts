@@ -23,7 +23,7 @@ import { figmaAssets } from '../../shared/figma-assets';
   template: `
     <section class="relative mx-auto flex w-full max-w-[1440px] flex-col items-start gap-10 overflow-hidden px-6 py-10 md:px-[100px] md:py-16 md:min-h-[779px]">
       <div class="relative flex w-full flex-col items-start gap-8 lg:flex-row lg:gap-10">
-        <div class="flex w-full max-w-[480px] flex-col items-start gap-3.5">
+        <div class="flex w-full max-w-[640px] shrink-0 flex-col items-start gap-3.5 lg:w-1/2">
           <div class="flex items-center gap-3">
             <img [src]="assets.lineShortAlt" alt="" class="h-px w-[46px]" />
             <span class="text-brand-teal text-[18px] font-medium">Meet the Visionary</span>
@@ -43,11 +43,11 @@ import { figmaAssets } from '../../shared/figma-assets';
       </div>
 
       <div class="relative flex w-full flex-col items-start gap-8 md:flex-row md:gap-10">
-        <div class="flex w-full max-w-[500px] shrink-0 flex-col items-start gap-4">
+        <div class="flex w-full max-w-[640px] shrink-0 flex-col items-start gap-4 md:w-1/2">
           <img
             [src]="assets.founderPhoto"
             alt="Dr. Mona Chadda, Founder of My School"
-            class="h-[500px] w-[500px] max-w-full rounded-lg object-contain"
+            class="h-auto w-full rounded-lg object-fill md:h-[500px]"
           />
           <div class="flex w-full flex-col items-center">
             <p class="w-fit border-b-2 border-black pb-1 text-[22px] font-bold text-black">Dr. Mona Chadda,</p>
