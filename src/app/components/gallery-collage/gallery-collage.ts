@@ -12,7 +12,9 @@ interface CollagePhoto {
 }
 
 const CIRCLE_WIDTH_PCT = 20;
-const CIRCLE_HEIGHT_PCT = 27.4;
+// The ring container is 1440x1050, so a circle's height % must be scaled by
+// that aspect ratio to stay round.
+const circleHeightPct = (widthPct: number) => (widthPct * 1440) / 1050;
 
 @Component({
   selector: 'app-gallery-collage',
@@ -71,10 +73,10 @@ const CIRCLE_HEIGHT_PCT = 27.4;
             <img [src]="photo.src" alt="Student life at My School" class="size-full object-cover" />
             <div
               class="absolute inset-0 flex items-center justify-center p-4 text-center opacity-0 backdrop-blur-[2px] transition-opacity duration-300 ease-out group-hover:opacity-100"
-              [class.bg-brand-orange/40]="photo.accent === 'orange'"
-              [class.bg-brand-teal/40]="photo.accent === 'teal'"
+              [class.bg-brand-orange/75]="photo.accent === 'orange'"
+              [class.bg-brand-teal/75]="photo.accent === 'teal'"
             >
-              <span class="text-base font-semibold text-black drop-shadow-sm sm:text-lg">{{ photo.label }}</span>
+              <span class="text-[22px] font-bold text-white drop-shadow-md lg:text-[28px]">{{ photo.label }}</span>
             </div>
           </div>
         }
@@ -108,11 +110,11 @@ export class GalleryCollage {
 
   // Top/bottom stay close in; the left/right pairs are pulled further out to widen the ring into an oval
   protected readonly collagePhotos: CollagePhoto[] = [
-    { src: figmaAssets.collage31, label: 'Music', accent: 'teal', leftPct: 40, topPct: 4.11, widthPct: CIRCLE_WIDTH_PCT, heightPct: CIRCLE_HEIGHT_PCT },
-    { src: figmaAssets.collage32, label: 'Arts & Crafts', accent: 'orange', leftPct: 69.44, topPct: 20.2, widthPct: CIRCLE_WIDTH_PCT, heightPct: CIRCLE_HEIGHT_PCT },
-    { src: figmaAssets.collage33, label: 'Dance', accent: 'teal', leftPct: 69.44, topPct: 52.4, widthPct: CIRCLE_WIDTH_PCT, heightPct: CIRCLE_HEIGHT_PCT },
-    { src: figmaAssets.collage34, label: 'Science & Innovation', accent: 'orange', leftPct: 40, topPct: 68.49, widthPct: CIRCLE_WIDTH_PCT, heightPct: CIRCLE_HEIGHT_PCT },
-    { src: figmaAssets.collage35, label: 'Drama', accent: 'teal', leftPct: 10.56, topPct: 52.4, widthPct: CIRCLE_WIDTH_PCT, heightPct: CIRCLE_HEIGHT_PCT },
-    { src: figmaAssets.collage36, label: 'Public Speaking', accent: 'orange', leftPct: 10.56, topPct: 20.2, widthPct: CIRCLE_WIDTH_PCT, heightPct: CIRCLE_HEIGHT_PCT },
+    { src: figmaAssets.collage31, label: 'Music', accent: 'teal', leftPct: 43, topPct: 4.11, widthPct: CIRCLE_WIDTH_PCT, heightPct: circleHeightPct(CIRCLE_WIDTH_PCT) },
+    { src: figmaAssets.collage32, label: 'Arts & Crafts', accent: 'orange', leftPct: 65, topPct: 22.9, widthPct: 16, heightPct: circleHeightPct(16) },
+    { src: figmaAssets.collage33, label: 'Dance', accent: 'teal', leftPct: 67.44, topPct: 49.65, widthPct: 24, heightPct: circleHeightPct(24) },
+    { src: figmaAssets.collage34, label: 'Science & Innovation', accent: 'orange', leftPct: 43, topPct: 65, widthPct: CIRCLE_WIDTH_PCT, heightPct: circleHeightPct(CIRCLE_WIDTH_PCT) },
+    { src: figmaAssets.collage35, label: 'Drama', accent: 'teal', leftPct: 10.5, topPct: 49.65, widthPct: 24, heightPct: circleHeightPct(24) },
+    { src: figmaAssets.collage36, label: 'Public Speaking', accent: 'orange', leftPct: 18.5, topPct: 18.5, widthPct: 18, heightPct: circleHeightPct(18) },
   ];
 }
