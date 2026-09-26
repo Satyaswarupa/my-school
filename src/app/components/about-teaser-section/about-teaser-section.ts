@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { figmaAssets } from '../../shared/figma-assets';
 
 @Component({
   selector: 'app-about-teaser-section',
-  imports: [],
+  imports: [RouterLink],
   template: `
     <section class="relative flex flex-col items-start overflow-hidden bg-white px-6 py-10 md:px-[100px] md:py-10">
       <img [src]="assets.rectangleDecor" alt="" class="pointer-events-none absolute top-0 left-0 hidden h-full w-[738px] md:block" />
@@ -30,7 +31,7 @@ import { figmaAssets } from '../../shared/figma-assets';
               discovering strengths, and developing the skills needed for the future.
             </p>
           </div>
-          <a href="#" class="flex cursor-pointer items-center gap-4">
+          <a routerLink="/about-us" class="flex cursor-pointer items-center gap-4">
             <img [src]="assets.arrowLink" alt="" class="h-[19px] w-[70px] invert md:invert-0" />
             <span class="flex items-center gap-1.5">
               <span class="text-sm font-semibold text-[#3d3d3d] underline md:text-[#e5e5e5]">Read Our Full Story</span>

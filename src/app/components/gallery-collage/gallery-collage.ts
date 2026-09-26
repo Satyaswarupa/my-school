@@ -74,7 +74,7 @@ const CIRCLE_HEIGHT_PCT = 27.4;
               [class.bg-brand-orange/40]="photo.accent === 'orange'"
               [class.bg-brand-teal/40]="photo.accent === 'teal'"
             >
-              <span class="text-base font-semibold text-white drop-shadow-sm sm:text-lg">{{ photo.label }}</span>
+              <span class="text-base font-semibold text-black drop-shadow-sm sm:text-lg">{{ photo.label }}</span>
             </div>
           </div>
         }

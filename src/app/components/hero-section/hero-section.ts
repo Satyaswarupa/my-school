@@ -18,6 +18,12 @@ import { figmaAssets } from '../../shared/figma-assets';
         class="absolute inset-0 size-full object-cover"
       ></video>
 
+      <!-- Top gradient so the nav bar stays legible over bright video frames -->
+      <div
+        aria-hidden="true"
+        class="pointer-events-none absolute inset-x-0 top-0 h-[10%] bg-gradient-to-b from-black/70 via-black/30 to-transparent"
+      ></div>
+
       <app-site-header class="absolute inset-x-0 top-0 z-10" />
 
       <button
