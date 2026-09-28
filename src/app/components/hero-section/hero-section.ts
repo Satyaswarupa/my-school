@@ -30,7 +30,7 @@ import { figmaAssets } from '../../shared/figma-assets';
         type="button"
         [attr.aria-label]="isMuted() ? 'Unmute video' : 'Mute video'"
         (click)="toggleMute()"
-        class="absolute right-6 bottom-6 z-10 flex size-11 cursor-pointer items-center justify-center rounded-full bg-black/40 text-white transition-colors hover:bg-black/60 md:right-[100px]"
+        class="absolute right-6 bottom-6 z-10 flex size-11 cursor-pointer items-center justify-center rounded-full bg-black/40 text-white transition-colors hover:bg-black/60 md:right-12 lg:right-[100px]"
       >
         @if (isMuted()) {
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">

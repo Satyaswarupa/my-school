@@ -16,13 +16,13 @@ interface Reason {
   selector: 'app-reasons-section',
   imports: [],
   template: `
-    <section class="bg-brand-teal flex w-full flex-col items-start gap-10 px-6 py-10 md:px-[100px] md:py-16">
+    <section class="bg-brand-teal flex w-full flex-col items-start gap-10 px-6 py-10 md:px-12 lg:px-[100px] md:py-16">
       <div class="flex flex-col gap-3.5">
         <div class="flex items-center gap-3.5">
           <img [src]="assets.lineShortAlt2" alt="" class="h-px w-[46px]" />
-          <span class="text-[22px] font-medium text-white">Why Choose Us</span>
+          <span class="text-[18px] md:text-[22px] font-medium text-white">Why Choose Us</span>
         </div>
-        <h2 class="text-[48px] leading-tight font-bold text-white">
+        <h2 class="text-[32px] md:text-[40px] lg:text-[48px] leading-tight font-bold text-white">
           5 Reasons Parents<br />
           <span class="text-brand-orange">Never Look Back</span>
         </h2>
@@ -48,8 +48,8 @@ interface Reason {
 
             <div class="relative flex w-full items-center justify-between">
               <div class="flex items-start gap-5 font-bold text-white md:gap-20">
-                <p class="text-[24px]">{{ reason.number }}</p>
-                <p class="text-[30px]">
+                <p class="text-[18px] md:text-[24px]">{{ reason.number }}</p>
+                <p class="text-[22px] md:text-[30px]">
                   @for (segment of reason.segments; track segment.text) {
                     <span [class.text-brand-orange]="segment.accent === 'orange'">{{ segment.text }}</span>
                   }

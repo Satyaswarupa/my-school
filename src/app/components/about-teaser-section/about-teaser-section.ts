@@ -6,22 +6,22 @@ import { figmaAssets } from '../../shared/figma-assets';
   selector: 'app-about-teaser-section',
   imports: [RouterLink],
   template: `
-    <section class="relative flex flex-col items-start overflow-hidden bg-white px-6 py-10 md:px-[100px] md:py-10">
+    <section class="relative flex flex-col items-start overflow-hidden bg-white px-6 py-10 md:px-12 lg:px-[100px] md:py-10">
       <img [src]="assets.rectangleDecor" alt="" class="pointer-events-none absolute top-0 left-0 hidden h-full w-[738px] md:block" />
 
-      <div class="relative flex w-full flex-col gap-10 lg:flex-row lg:items-center" style="column-gap: 94px">
-        <div class="flex flex-col gap-10 lg:w-[542px] lg:shrink-0">
+      <div class="relative flex w-full flex-col gap-10 xl:flex-row xl:items-center" style="column-gap: 94px">
+        <div class="flex flex-col gap-10 md:max-w-[560px] xl:w-[542px] xl:shrink-0">
           <div class="flex flex-col gap-3.5">
             <div class="flex items-center gap-3.5">
               <img [src]="assets.lineShort" alt="" class="h-px w-[46px] invert md:invert-0" />
               <p class="text-brand-orange text-lg font-medium md:text-white">Est. 2012 · About Us</p>
             </div>
-            <h1 class="text-[48px] leading-tight font-bold text-black md:text-white">
+            <h1 class="text-[32px] md:text-[40px] lg:text-[48px] leading-tight font-bold text-black md:text-white">
               Bridging Tradition<br />
               with Tomorrow
             </h1>
           </div>
-          <div class="flex flex-col gap-4 text-[20px] text-[#3d3d3d] md:text-[#f3f3f3]">
+          <div class="flex flex-col gap-4 text-[18px] md:text-[20px] text-[#3d3d3d] md:text-[#f3f3f3]">
             <p>
               Established in 2012 in Pimpri and now rooted in Wakad, My School is a learner-centric CBSE
               institution committed to nurturing confident, compassionate, and future-ready individuals.
@@ -43,7 +43,7 @@ import { figmaAssets } from '../../shared/figma-assets';
         <img
           [src]="assets.creativeSideImage"
           alt="Students at My School"
-          class="h-[300px] w-full rounded-lg object-cover md:h-[480px] lg:mt-16 lg:w-[720px] lg:shrink-0 lg:rounded-none"
+          class="aspect-[3/2] w-full rounded-lg object-cover xl:mt-16 xl:-mr-[100px] xl:w-0 xl:max-w-[720px] xl:min-w-0 xl:flex-1 xl:rounded-none"
         />
       </div>
     </section>

@@ -9,6 +9,21 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  <script>
+    // Desktop screens narrower than the 1440px design (14" laptops, browser zoom) render the
+    // 1440 layout scaled down to fit, so text, images and the nav keep the same proportions.
+    // Below 1280px the responsive tablet/phone layouts take over instead.
+    (function () {
+      var DESIGN = 1440, MIN = 1280, root = document.documentElement;
+      function fit() {
+        root.style.zoom = '';
+        var w = root.clientWidth;
+        if (w >= MIN && w < DESIGN) root.style.zoom = String(w / DESIGN);
+      }
+      fit();
+      window.addEventListener('resize', fit);
+    })();
+  </script>
 </head>
 <body>
   <app-root></app-root>

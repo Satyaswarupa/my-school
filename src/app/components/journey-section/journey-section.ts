@@ -5,8 +5,8 @@ import { figmaAssets } from '../../shared/figma-assets';
   selector: 'app-journey-section',
   imports: [],
   template: `
-    <section class="flex w-full flex-col items-start gap-8 border border-black/10 bg-[#f9f9f9] px-6 py-10 md:px-[100px] md:py-10">
-      <div class="flex w-full flex-col items-end gap-12 lg:flex-row lg:gap-[199px]">
+    <section class="flex w-full flex-col items-start gap-8 border border-black/10 bg-[#f9f9f9] px-6 py-10 md:px-12 lg:px-[100px] md:py-10">
+      <div class="flex w-full flex-col items-start gap-12 lg:flex-row lg:items-end lg:gap-[199px]">
         <div class="flex w-full max-w-[530px] flex-col items-start gap-5">
           <div class="flex w-full flex-col items-start gap-3">
             <div class="flex w-full flex-col items-start gap-3.5">
@@ -22,13 +22,13 @@ import { figmaAssets } from '../../shared/figma-assets';
                 />
               </div>
             </div>
-            <h3 class="text-[48px] font-bold text-black">Pimpri, Pune</h3>
+            <h3 class="text-[32px] md:text-[40px] lg:text-[48px] font-bold text-black">Pimpri, Pune</h3>
           </div>
           <div class="flex items-center gap-3">
             <img [src]="assets.lineShortAlt" alt="" class="h-px w-[46px]" />
-            <span class="text-brand-orange text-[20px] font-medium">ORIGIN CAMPUS</span>
+            <span class="text-brand-orange text-[18px] md:text-[20px] font-medium">ORIGIN CAMPUS</span>
           </div>
-          <p class="text-[18px] text-black">
+          <p class="text-[16px] md:text-[18px] text-black">
             Founded with a clear vision — to build a school that goes beyond textbooks and shapes real human beings.
             Started with a handful of classrooms and an ocean of ambition.
           </p>
@@ -43,11 +43,11 @@ import { figmaAssets } from '../../shared/figma-assets';
                 class="absolute top-[-97.16%] left-[-4.96%] h-[193.57%] w-[113.61%] max-w-none"
               />
             </div>
-            <h3 class="text-4xl font-bold text-black md:text-[48px]">Wakad, Pune</h3>
+            <h3 class="text-[32px] leading-[calc(2.5/2.25)] font-bold text-black md:text-[40px] lg:text-[48px]">Wakad, Pune</h3>
           </div>
           <div class="flex items-center gap-3">
             <img [src]="assets.lineShortAlt" alt="" class="h-px w-[46px]" />
-            <span class="text-brand-teal text-[20px] font-medium">MAIN CAMPUS TODAY</span>
+            <span class="text-brand-teal text-[18px] md:text-[20px] font-medium">MAIN CAMPUS TODAY</span>
           </div>
           <p class="text-lg text-black">
             Expanded to Wakad, becoming a thriving campus with smart classrooms, sports ground, robotics lab, and

@@ -15,7 +15,7 @@ const AUTOPLAY_MS = 6000;
   imports: [],
   template: `
     <section
-      class="relative flex w-full flex-col items-start gap-12 overflow-hidden bg-[#5e5e5e] px-6 py-20 outline-none md:px-[100px] md:py-28"
+      class="relative flex w-full flex-col items-start gap-12 overflow-hidden bg-[#5e5e5e] px-6 py-14 outline-none md:px-12 lg:px-[100px] md:py-28"
       tabindex="0"
       aria-roledescription="carousel"
       aria-label="Parent testimonials"
@@ -29,7 +29,7 @@ const AUTOPLAY_MS = 6000;
         <div class="flex flex-col items-start gap-2">
           <div class="flex items-center gap-3.5">
             <img [src]="assets.lineShortAlt" alt="" class="h-px w-[46px]" />
-            <span class="text-[22px] font-medium text-white">Voices of Trust</span>
+            <span class="text-[18px] md:text-[22px] font-medium text-white">Voices of Trust</span>
           </div>
           <img [src]="assets.quote" alt="" class="size-10 md:size-12" />
         </div>
@@ -47,7 +47,7 @@ const AUTOPLAY_MS = 6000;
                 [attr.aria-label]="i + 1 + ' of ' + testimonials.length"
                 [attr.aria-hidden]="current() !== i"
               >
-                <p class="w-full max-w-[1150px] text-[48px] leading-snug font-semibold text-white">
+                <p class="w-full max-w-[1150px] text-[24px] leading-snug font-semibold text-white md:text-[36px] lg:text-[48px]">
                   {{ t.quote }}
                 </p>
 
@@ -59,7 +59,7 @@ const AUTOPLAY_MS = 6000;
                     <span class="text-[24px] text-white">{{ t.name[0] }}</span>
                   </div>
                   <div class="flex flex-col gap-0.5">
-                    <p class="text-[22px] text-white">{{ t.name }}</p>
+                    <p class="text-[18px] md:text-[22px] text-white">{{ t.name }}</p>
                     <p class="text-[16px] text-[#cfcfcf]">{{ t.role }}</p>
                     <div class="flex items-center gap-0.5 pt-0.5">
                       @for (star of stars; track star) {

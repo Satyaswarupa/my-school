@@ -10,23 +10,23 @@ interface FaqItem {
   selector: 'app-faq-section',
   imports: [],
   template: `
-    <section class="relative flex w-full flex-col items-start overflow-hidden bg-[#0c1a1d] px-6 py-10 md:px-[100px] md:py-14">
-      <p class="pointer-events-none absolute top-[70%] right-6 -translate-y-1/2 text-[172px] leading-none font-bold whitespace-nowrap text-white/5 select-none md:right-[100px]">
+    <section class="relative flex w-full flex-col items-start overflow-hidden bg-[#0c1a1d] px-6 py-10 md:px-12 lg:px-[100px] md:py-14">
+      <p class="pointer-events-none absolute top-[70%] right-6 -translate-y-1/2 text-[110px] leading-none md:text-[172px] font-bold whitespace-nowrap text-white/5 select-none md:right-12 lg:right-[100px]">
         FAQ
       </p>
       <div class="relative flex w-full flex-col items-start gap-3.5 md:max-w-[254px]">
         <div class="flex items-center gap-3.5">
           <img [src]="assets.lineShortAlt3" alt="" class="h-px w-[46px]" />
-          <span class="text-[22px] font-medium whitespace-nowrap text-white">Questions & Answers</span>
+          <span class="text-[18px] md:text-[22px] font-medium whitespace-nowrap text-white">Questions & Answers</span>
         </div>
-        <h2 class="text-[48px] leading-tight font-bold text-white">
+        <h2 class="text-[32px] md:text-[40px] lg:text-[48px] leading-tight font-bold text-white">
           Got a<br />
           <span class="text-brand-orange">Question?</span>
         </h2>
       </div>
     </section>
 
-    <section class="flex w-full flex-col items-start gap-5 bg-white px-6 pt-5 pb-10 md:px-[100px] md:pb-16">
+    <section class="flex w-full flex-col items-start gap-5 bg-white px-6 pt-5 pb-10 md:px-12 lg:px-[100px] md:pb-16">
       <div class="flex w-full flex-col items-start gap-5">
         @for (faq of faqs; track faq.question; let i = $index) {
           <div class="flex w-full flex-col gap-2.5">
@@ -36,11 +36,11 @@ interface FaqItem {
               [attr.aria-expanded]="openIndex() === i"
               (click)="toggle(i)"
             >
-              <span class="text-[20px] font-semibold text-black">{{ faq.question }}</span>
+              <span class="text-[18px] md:text-[20px] font-semibold text-black">{{ faq.question }}</span>
               <img
                 [src]="assets.chevronDown"
                 alt=""
-                class="size-12 shrink-0 transition-transform"
+                class="size-10 shrink-0 transition-transform md:size-12"
                 [class.rotate-180]="openIndex() !== i"
               />
             </button>

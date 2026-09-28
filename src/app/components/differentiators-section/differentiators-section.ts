@@ -11,31 +11,31 @@ interface Differentiator {
   selector: 'app-differentiators-section',
   imports: [],
   template: `
-    <section class="bg-brand-mist flex w-full flex-col items-start gap-10 px-6 py-10 md:px-[100px] md:py-16">
+    <section class="bg-brand-mist flex w-full flex-col items-start gap-10 px-6 py-10 md:px-12 lg:px-[100px] md:py-16">
       <div class="flex w-full max-w-[585px] flex-col items-start gap-3">
         <div class="flex flex-col gap-3.5">
           <div class="flex w-full items-center gap-3.5">
             <img [src]="assets.lineShortAlt" alt="" class="h-px w-[46px]" />
-            <span class="text-brand-teal-deep text-[22px] font-medium">Beyond The Curriculum</span>
+            <span class="text-brand-teal-deep text-[18px] md:text-[22px] font-medium">Beyond The Curriculum</span>
           </div>
           <div class="flex w-full flex-col items-start">
-            <h2 class="text-[48px] font-bold text-black">
+            <h2 class="text-[32px] md:text-[40px] lg:text-[48px] font-bold text-black">
               What Makes Us <span class="text-brand-teal">Different</span>
             </h2>
             <img [src]="assets.underlineSquiggle" alt="" class="h-[7px] w-[206px]" />
           </div>
         </div>
-        <p class="w-full text-left text-[18px] text-[#5e5e5e]">Six signature programmes you won't find in any typical school.</p>
+        <p class="w-full text-left text-[16px] md:text-[18px] text-[#5e5e5e]">Six signature programmes you won't find in any typical school.</p>
       </div>
 
       <div class="flex w-full flex-col items-end gap-5">
         @for (item of items; track item.number) {
           <div class="flex w-full flex-col gap-3">
             <img [src]="assets.divider" alt="" class="h-px w-full" />
-            <div class="flex w-full flex-col items-start gap-3 md:flex-row md:items-center md:gap-[85px]">
+            <div class="flex w-full flex-col items-start gap-3 lg:flex-row lg:items-center lg:gap-[85px]">
               <p class="text-brand-orange w-10 shrink-0 text-[14px] font-bold">{{ item.number }}</p>
-              <p class="w-full shrink-0 text-[20px] font-bold text-black md:w-[226px]">{{ item.title }}</p>
-              <p class="text-[18px] text-[#3d3d3d]">{{ item.description }}</p>
+              <p class="w-full shrink-0 text-[18px] font-bold text-black md:text-[20px] lg:w-[226px]">{{ item.title }}</p>
+              <p class="text-[16px] md:text-[18px] text-[#3d3d3d]">{{ item.description }}</p>
             </div>
           </div>
         }

@@ -12,16 +12,16 @@ interface Pillar {
   selector: 'app-vision-mission-section',
   imports: [],
   template: `
-    <section class="relative flex w-full flex-col items-start overflow-hidden px-6 py-10 md:px-[100px] md:py-16">
+    <section class="relative flex w-full flex-col items-start overflow-hidden px-6 py-10 md:px-12 lg:px-[100px] md:py-16">
       <img [src]="assets.visionPattern" alt="" class="pointer-events-none absolute inset-0 size-full object-cover opacity-[0.07]" />
 
       <div class="relative flex w-full flex-col items-start gap-10">
         <div class="flex max-w-[555px] flex-col items-start gap-3.5">
           <div class="flex items-center gap-3">
             <img [src]="assets.lineShortAlt" alt="" class="h-px w-[46px]" />
-            <span class="text-brand-teal text-[22px] font-medium">What Drives us</span>
+            <span class="text-brand-teal text-[18px] md:text-[22px] font-medium">What Drives us</span>
           </div>
-          <h2 class="flex flex-wrap gap-x-5 text-[48px] font-bold text-black">
+          <h2 class="flex flex-wrap gap-x-5 text-[32px] md:text-[40px] lg:text-[48px] font-bold text-black">
             <span class="text-brand-teal">Vision.</span>
             <span class="text-brand-orange">Mission.</span>
             <span class="text-brand-teal">Values.</span>
@@ -30,9 +30,9 @@ interface Pillar {
 
         <div class="flex w-full flex-col items-start gap-8">
           @for (pillar of pillars; track pillar.label) {
-            <div class="flex w-full items-start gap-8 md:items-center md:gap-14">
+            <div class="flex w-full items-start gap-5 md:items-center md:gap-14">
               <p
-                class="w-28 shrink-0 text-[130px] leading-none font-bold"
+                class="w-14 shrink-0 text-[72px] leading-none font-bold md:w-28 md:text-[130px]"
                 [class.text-brand-teal]="pillar.labelColor === 'teal'"
                 [class.text-brand-orange]="pillar.labelColor === 'orange'"
               >
@@ -40,13 +40,13 @@ interface Pillar {
               </p>
               <div class="flex flex-col items-start gap-3">
                 <p
-                  class="text-[22px] font-bold"
+                  class="text-[18px] md:text-[22px] font-bold"
                   [class.text-brand-teal]="pillar.labelColor === 'teal'"
                   [class.text-brand-orange]="pillar.labelColor === 'orange'"
                 >
                   {{ pillar.label }}
                 </p>
-                <p class="text-[18px] font-bold text-black">{{ pillar.description }}</p>
+                <p class="text-[16px] md:text-[18px] font-bold text-black">{{ pillar.description }}</p>
               </div>
             </div>
           }

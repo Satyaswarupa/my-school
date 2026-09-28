@@ -21,45 +21,45 @@ import { figmaAssets } from '../../shared/figma-assets';
     }
   `,
   template: `
-    <section class="relative mx-auto flex w-full max-w-[1440px] flex-col items-start gap-10 overflow-hidden px-6 py-10 md:px-[100px] md:py-16 md:min-h-[779px]">
+    <section class="relative mx-auto flex w-full max-w-[1440px] flex-col items-start gap-10 overflow-hidden px-6 py-10 md:px-12 lg:px-[100px] md:py-16 md:min-h-[779px]">
       <div class="relative flex w-full flex-col items-start gap-8 lg:flex-row lg:gap-10">
         <div class="flex w-full max-w-[740px] shrink-0 flex-col items-start gap-3.5 lg:w-[58%]">
           <div class="flex items-center gap-3">
             <img [src]="assets.lineShortAlt" alt="" class="h-px w-[46px]" />
-            <span class="text-brand-teal text-[18px] font-medium">Meet the Visionary</span>
+            <span class="text-brand-teal text-[16px] md:text-[18px] font-medium">Meet the Visionary</span>
           </div>
-          <h2 class="text-[48px] font-bold text-black">
+          <h2 class="text-[32px] md:text-[40px] lg:text-[48px] font-bold text-black">
             About Our <span class="text-brand-orange">Founder</span>
           </h2>
         </div>
 
         <div class="flex w-full flex-col items-start gap-6">
           <img [src]="assets.quote" alt="" class="h-9 w-11" />
-          <p class="text-brand-teal text-[20px] font-semibold">
+          <p class="text-brand-teal text-[18px] md:text-[20px] font-semibold">
             My School is more than a workplace—it's a family dedicated to shaping confident, responsible, and
             future-ready citizens who make a positive impact on the world.
           </p>
         </div>
       </div>
 
-      <div class="relative flex w-full flex-col items-start gap-8 md:flex-row md:gap-10">
-        <div class="flex w-full max-w-[740px] shrink-0 flex-col items-start gap-4 md:-mt-16 md:w-[58%]">
+      <div class="relative flex w-full flex-col items-start gap-8 lg:flex-row lg:gap-10">
+        <div class="flex w-full max-w-[740px] shrink-0 flex-col items-start gap-4 lg:-mt-16 lg:w-[58%]">
           <img
             [src]="assets.founderPhoto"
             alt="Dr. Mona Chadda, Founder of My School"
-            class="h-auto w-full rounded-lg object-fill md:h-[500px]"
+            class="h-auto w-full rounded-lg object-fill lg:h-[400px] xl:h-[500px]"
           />
           <div class="flex w-full flex-col items-center">
-            <p class="w-fit border-b-2 border-black pb-1 text-[22px] font-bold text-black">Dr. Mona Chadda,</p>
+            <p class="w-fit border-b-2 border-black pb-1 text-[18px] md:text-[22px] font-bold text-black">Dr. Mona Chadda,</p>
             <p class="text-base text-black">Founder, My School</p>
           </div>
         </div>
 
         <div class="flex w-full flex-col items-start gap-6">
-          <p class="w-fit border-b-2 border-black pb-1 text-[20px] font-bold text-black">"Heart of a Teacher"</p>
+          <p class="w-fit border-b-2 border-black pb-1 text-[18px] md:text-[20px] font-bold text-black">"Heart of a Teacher"</p>
 
           <div
-            class="flex w-full flex-col gap-2 text-[20px] leading-snug font-normal whitespace-pre-line text-[#2a2a2a]"
+            class="flex w-full flex-col gap-2 text-[18px] md:text-[20px] leading-snug font-normal whitespace-pre-line text-[#2a2a2a]"
             [class.poem-scroll]="expanded()"
             [class.max-h-[400px]]="expanded()"
             [class.overflow-y-auto]="expanded()"

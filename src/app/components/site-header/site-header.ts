@@ -15,7 +15,7 @@ interface NavLink {
   selector: 'app-site-header',
   imports: [RouterLink],
   template: `
-    <header class="relative flex w-full items-center justify-between gap-4 px-4 py-4 sm:px-6 sm:py-5 md:px-[100px]">
+    <header class="relative flex w-full items-center justify-between gap-4 px-4 py-4 sm:px-6 sm:py-5 md:px-12 lg:px-[100px]">
       <a routerLink="/" class="flex shrink-0 items-center gap-1" (click)="menuOpen.set(false)">
         <img [src]="assets.logo" alt="My School logo" class="size-10 object-cover sm:size-[50px]" />
         <div class="flex items-center overflow-hidden rounded-lg">
@@ -24,7 +24,7 @@ interface NavLink {
         </div>
       </a>
 
-      <nav class="hidden items-center gap-8 lg:flex">
+      <nav class="hidden items-center gap-8 xl:flex">
         @for (link of navLinks; track link.label) {
           @if (link.routed) {
             <a
@@ -57,13 +57,13 @@ interface NavLink {
       </nav>
 
       <div class="flex shrink-0 items-center gap-2">
-        <div class="hidden items-end gap-0.5 lg:flex">
+        <div class="hidden items-end gap-0.5 xl:flex">
           <img [src]="variant() === 'overlay' ? assets.callIcon : assets.callIconDark" alt="" class="size-4" />
           <span class="whitespace-nowrap text-sm" [class.text-white]="variant() === 'overlay'" [class.text-[#2a2a2a]]="variant() === 'light'">
             +91-9876543210
           </span>
         </div>
-        <div class="hidden items-center gap-4 lg:flex">
+        <div class="hidden items-center gap-4 xl:flex">
           <a
             href="#"
             class="whitespace-nowrap rounded border px-5 py-2.5 text-base font-medium"
@@ -82,7 +82,7 @@ interface NavLink {
 
         <button
           type="button"
-          class="flex size-10 shrink-0 items-center justify-center rounded lg:hidden"
+          class="flex size-10 shrink-0 items-center justify-center rounded xl:hidden"
           [attr.aria-expanded]="menuOpen()"
           aria-label="Toggle navigation menu"
           (click)="menuOpen.set(!menuOpen())"
@@ -113,7 +113,7 @@ interface NavLink {
 
       @if (menuOpen()) {
         <div
-          class="absolute inset-x-0 top-full z-30 flex max-h-[calc(100vh-64px)] flex-col gap-1 overflow-y-auto border-t p-4 shadow-lg lg:hidden"
+          class="absolute inset-x-0 top-full z-30 flex max-h-[calc(100vh-64px)] flex-col gap-1 overflow-y-auto border-t p-4 shadow-lg xl:hidden"
           [class.bg-brand-ink]="variant() === 'overlay'"
           [class.border-white/10]="variant() === 'overlay'"
           [class.bg-white]="variant() === 'light'"

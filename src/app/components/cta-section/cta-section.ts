@@ -11,8 +11,8 @@ import { figmaAssets } from '../../shared/figma-assets';
 
       <div class="relative flex w-full max-w-[322px] flex-col items-center gap-10">
         <div class="flex w-full flex-col items-center gap-14">
-          <p class="w-full text-center text-[32px] text-white">IT'S TIME TO</p>
-          <div class="flex flex-col items-center gap-6 text-center text-[120px] leading-none font-bold text-white">
+          <p class="w-full text-center text-[24px] text-white md:text-[32px]">IT'S TIME TO</p>
+          <div class="flex flex-col items-center gap-6 text-center text-[88px] leading-none md:text-[120px] font-bold text-white">
             <p>Make</p>
             <p>Your</p>
             <p>Move</p>

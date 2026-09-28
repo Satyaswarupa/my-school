@@ -8,24 +8,24 @@ import { figmaAssets } from '../../shared/figma-assets';
   template: `
     <section class="relative overflow-hidden bg-white">
       <img [src]="assets.aboutHeroTexture" alt="" class="pointer-events-none absolute inset-0 size-full object-cover opacity-10" />
-      <p class="pointer-events-none absolute top-[190px] left-[calc(41.67%+21px)] hidden w-[850px] text-[260px] leading-none font-bold whitespace-nowrap text-black/5 select-none md:block">
+      <p class="pointer-events-none absolute top-[13.2vw] left-[calc(41.67%+21px)] hidden w-[850px] text-[13.9vw] leading-none xl:top-[190px] xl:text-[200px] font-bold whitespace-nowrap text-black/5 select-none md:block">
         ABOUT
       </p>
 
       <app-site-header variant="light" activeLink="About Us" class="relative" />
 
-      <div class="relative flex flex-col items-start gap-5 px-6 pt-10 pb-16 md:px-[100px]">
+      <div class="relative flex flex-col items-start gap-5 px-6 pt-10 pb-16 md:px-12 lg:px-[100px]">
         <div class="flex flex-col gap-3.5">
           <div class="flex items-center gap-3.5">
             <img [src]="assets.lineShortAlt" alt="" class="h-px w-[46px]" />
-            <span class="text-brand-orange text-[22px] font-medium">Who We Are</span>
+            <span class="text-brand-orange text-[18px] md:text-[22px] font-medium">Who We Are</span>
           </div>
-          <h1 class="max-w-[680px] text-[48px] leading-tight font-bold text-black">
+          <h1 class="max-w-[680px] text-[32px] md:text-[40px] lg:text-[48px] leading-tight font-bold text-black">
             Shaping <span class="text-brand-orange">Stories</span><br />
             Since <span class="text-brand-teal">2012</span>
           </h1>
         </div>
-        <p class="max-w-[680px] text-[20px] text-black">
+        <p class="max-w-[680px] text-[18px] md:text-[20px] text-black">
           From Pimpri to Wakad — My School has spent over a decade nurturing curious, confident, and compassionate
           individuals.
         </p>

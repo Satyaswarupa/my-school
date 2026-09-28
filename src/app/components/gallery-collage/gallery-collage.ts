@@ -9,6 +9,8 @@ interface CollagePhoto {
   topPct: number;
   widthPct: number;
   heightPct: number;
+  /** CSS object-position for photos whose subject isn't centred */
+  focus?: string;
 }
 
 const CIRCLE_WIDTH_PCT = 20;
@@ -23,16 +25,16 @@ const circleHeightPct = (widthPct: number) => (widthPct * 1440) / 1050;
     <section class="w-full">
       <div class="relative flex h-[140px] w-full md:h-[200px]">
         @for (photo of stripPhotos; track photo) {
-          <img [src]="photo" alt="Life at My School" class="h-full flex-1 object-cover" />
+          <img [src]="photo" alt="Life at My School" class="h-full min-w-0 flex-1 object-cover max-sm:nth-[n+4]:hidden" />
         }
         <div class="pointer-events-none absolute inset-0 bg-[rgba(12,26,29,0.3)]"></div>
       </div>
 
       <!-- Mobile: normal-flow layout — the absolute ring below only has room to work at md+ -->
-      <div class="flex flex-col items-center gap-8 bg-white px-6 py-10 md:hidden">
+      <div class="flex flex-col items-center gap-8 bg-white px-6 py-10 md:px-12 md:py-14 xl:hidden">
         <div class="flex flex-col items-center gap-3.5 text-center">
           <p class="text-brand-teal-deep text-lg font-medium">Creative Expression</p>
-          <h2 class="text-3xl leading-tight font-bold text-black">
+          <h2 class="text-3xl leading-tight font-bold text-black md:text-[40px]">
             Where Every Child <span class="text-brand-teal-deep">Creates.</span>
           </h2>
           <p class="max-w-[380px] text-base text-[#5e5e5e]">
@@ -40,14 +42,15 @@ const circleHeightPct = (widthPct: number) => (widthPct * 1440) / 1050;
           </p>
         </div>
 
-        <div class="grid w-full grid-cols-3 gap-4">
+        <!-- a lone last circle (7th of 3 columns) goes in the middle column -->
+        <div class="grid w-full max-w-[720px] grid-cols-3 gap-4 md:gap-8 [&>*:last-child:nth-child(3n+1)]:col-start-2">
           @for (photo of collagePhotos; track photo.src) {
             <div class="flex flex-col items-center gap-2">
               <div class="aspect-square w-full overflow-hidden rounded-full">
-                <img [src]="photo.src" alt="Student life at My School" class="size-full object-cover" />
+                <img [src]="photo.src" alt="Student life at My School" class="size-full object-cover" [style.object-position]="photo.focus" />
               </div>
               <span
-                class="text-center text-xs font-medium"
+                class="text-center text-xs font-medium md:text-sm"
                 [class.text-brand-orange]="photo.accent === 'orange'"
                 [class.text-brand-teal]="photo.accent === 'teal'"
               >
@@ -59,7 +62,7 @@ const circleHeightPct = (widthPct: number) => (widthPct * 1440) / 1050;
       </div>
 
       <!-- Tablet/desktop: the original circular ring around the centered text -->
-      <div class="relative hidden aspect-[1440/1050] w-full overflow-hidden bg-white md:block">
+      <div class="relative hidden aspect-[1440/1050] w-full overflow-hidden bg-white xl:block">
         <img [src]="assets.collageBg" alt="" class="absolute inset-0 size-full object-cover opacity-30" />
 
         @for (photo of collagePhotos; track photo.src) {
@@ -70,7 +73,7 @@ const circleHeightPct = (widthPct: number) => (widthPct * 1440) / 1050;
             [style.width.%]="photo.widthPct"
             [style.height.%]="photo.heightPct"
           >
-            <img [src]="photo.src" alt="Student life at My School" class="size-full object-cover" />
+            <img [src]="photo.src" alt="Student life at My School" class="size-full object-cover" [style.object-position]="photo.focus" />
             <div
               class="absolute inset-0 flex items-center justify-center p-4 text-center opacity-0 backdrop-blur-[2px] transition-opacity duration-300 ease-out group-hover:opacity-100"
               [class.bg-brand-orange/75]="photo.accent === 'orange'"
@@ -81,15 +84,15 @@ const circleHeightPct = (widthPct: number) => (widthPct * 1440) / 1050;
           </div>
         }
 
-        <div class="absolute top-[40%] left-1/2 z-10 flex w-[90%] max-w-[450px] -translate-x-1/2 flex-col items-center gap-2.5 text-center md:w-[31%]">
+        <div class="absolute top-[45.9%] left-[48.19%] z-10 flex w-[26%] max-w-[380px] -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-2.5 text-center">
           <div class="flex flex-col items-center gap-3.5">
             <p class="text-brand-teal-deep text-lg font-medium">Creative Expression</p>
-            <h2 class="text-3xl leading-tight font-bold text-black md:text-[48px]">
+            <h2 class="text-[40px] leading-tight font-bold text-black">
               Where Every Child<br />
               <span class="text-brand-teal-deep">Creates.</span>
             </h2>
           </div>
-          <p class="max-w-[429px] text-base text-[#5e5e5e]">
+          <p class="max-w-[340px] text-base text-[#5e5e5e]">
             Music, Dance, Drama, Art — every child finds their voice.
           </p>
         </div>
@@ -108,13 +111,15 @@ export class GalleryCollage {
     figmaAssets.photo41,
   ];
 
-  // Top/bottom stay close in; the left/right pairs are pulled further out to widen the ring into an oval
+  // Clustered layout (after the reference design); listed clockwise from the top
   protected readonly collagePhotos: CollagePhoto[] = [
-    { src: figmaAssets.collage31, label: 'Music', accent: 'teal', leftPct: 43, topPct: 4.11, widthPct: CIRCLE_WIDTH_PCT, heightPct: circleHeightPct(CIRCLE_WIDTH_PCT) },
-    { src: figmaAssets.collage32, label: 'Arts & Crafts', accent: 'orange', leftPct: 65, topPct: 22.9, widthPct: 16, heightPct: circleHeightPct(16) },
-    { src: figmaAssets.collage33, label: 'Dance', accent: 'teal', leftPct: 67.44, topPct: 49.65, widthPct: 24, heightPct: circleHeightPct(24) },
-    { src: figmaAssets.collage34, label: 'Science & Innovation', accent: 'orange', leftPct: 43, topPct: 65, widthPct: CIRCLE_WIDTH_PCT, heightPct: circleHeightPct(CIRCLE_WIDTH_PCT) },
-    { src: figmaAssets.collage35, label: 'Drama', accent: 'teal', leftPct: 10.5, topPct: 49.65, widthPct: 24, heightPct: circleHeightPct(24) },
-    { src: figmaAssets.collage36, label: 'Public Speaking', accent: 'orange', leftPct: 18.5, topPct: 18.5, widthPct: 18, heightPct: circleHeightPct(18) },
+    { src: figmaAssets.collage31, label: 'Music', accent: 'teal', leftPct: 49.29, topPct: 9.36, widthPct: 16, heightPct: circleHeightPct(16) },
+    { src: figmaAssets.collage32, label: 'Arts & Crafts', accent: 'orange', leftPct: 64.5, topPct: 19.46, widthPct: 16, heightPct: circleHeightPct(16) },
+    { src: figmaAssets.collage33, label: 'Dance', accent: 'teal', leftPct: 60.9, topPct: 43.1, widthPct: 20, heightPct: circleHeightPct(20) },
+    // crop toward the kicking student on the right
+    { src: figmaAssets.galleryPhoto3, label: 'Sports', accent: 'teal', leftPct: 53.53, topPct: 68.79, widthPct: 16, heightPct: circleHeightPct(16), focus: 'right center' },
+    { src: figmaAssets.collage34, label: 'Science & Innovation', accent: 'orange', leftPct: 33.61, topPct: 56.62, widthPct: CIRCLE_WIDTH_PCT, heightPct: circleHeightPct(CIRCLE_WIDTH_PCT) },
+    { src: figmaAssets.collage35, label: 'Drama', accent: 'teal', leftPct: 19.5, topPct: 42.98, widthPct: 16, heightPct: circleHeightPct(16) },
+    { src: figmaAssets.collage36, label: 'Public Speaking', accent: 'orange', leftPct: 20.76, topPct: 13.29, widthPct: 20, heightPct: circleHeightPct(20) },
   ];
 }

@@ -19,14 +19,14 @@ type SubmitStatus = 'idle' | 'sending' | 'success' | 'error';
   selector: 'app-enquiry-form-section',
   imports: [FormsModule],
   template: `
-    <section id="lets-connect" class="flex w-full scroll-mt-24 flex-col items-center gap-10 bg-white px-6 py-10 md:px-[100px] md:py-16 lg:flex-row lg:items-center lg:justify-between">
+    <section id="lets-connect" class="flex w-full scroll-mt-24 flex-col items-start gap-10 bg-white px-6 py-10 md:px-12 lg:px-[100px] md:py-16 xl:flex-row xl:items-center xl:justify-between">
       <div class="flex w-full max-w-[558px] flex-col items-start gap-10">
         <div class="flex flex-col items-start gap-3.5">
           <div class="flex items-center gap-3">
             <span class="h-px w-[46px] bg-[#007381]"></span>
-            <span class="text-brand-teal text-[22px] font-medium">Send an Enquiry</span>
+            <span class="text-brand-teal text-[18px] md:text-[22px] font-medium">Send an Enquiry</span>
           </div>
-          <h2 class="text-[48px] font-bold text-black">
+          <h2 class="text-[32px] md:text-[40px] lg:text-[48px] font-bold text-black">
             Let's <span class="text-brand-teal">Connect</span>
           </h2>
         </div>
@@ -35,14 +35,14 @@ type SubmitStatus = 'idle' | 'sending' | 'success' | 'error';
           <div class="flex w-full flex-col items-start gap-2.5">
             @for (field of fields; track field.model) {
               <label class="flex w-full flex-col items-start gap-2">
-                <span class="text-brand-teal text-[20px] font-medium">{{ field.label }}</span>
+                <span class="text-brand-teal text-[18px] md:text-[20px] font-medium">{{ field.label }}</span>
                 <input
                   [type]="field.type"
                   [placeholder]="field.placeholder"
                   [name]="field.model"
                   [required]="field.required"
                   [(ngModel)]="formData[field.model]"
-                  class="w-full border-0 border-b border-[#d9d9d9] pb-2 text-[18px] text-[#474747] outline-none focus:border-brand-teal"
+                  class="w-full border-0 border-b border-[#d9d9d9] pb-2 text-[16px] md:text-[18px] text-[#474747] outline-none focus:border-brand-teal"
                 />
               </label>
             }
@@ -61,7 +61,7 @@ type SubmitStatus = 'idle' | 'sending' | 'success' | 'error';
           <button
             type="submit"
             [disabled]="status() === 'sending'"
-            class="bg-brand-orange flex items-center gap-2 self-start rounded px-6 py-3 text-[18px] font-medium text-[#f3f3f3] disabled:cursor-not-allowed disabled:opacity-60"
+            class="bg-brand-orange flex items-center gap-2 self-start rounded px-6 py-3 text-[16px] md:text-[18px] font-medium text-[#f3f3f3] disabled:cursor-not-allowed disabled:opacity-60"
           >
             {{ status() === 'sending' ? 'Sending…' : 'Submit Your Request' }}
             <img [src]="assets.telegramIcon" alt="" class="size-6" />
@@ -72,7 +72,7 @@ type SubmitStatus = 'idle' | 'sending' | 'success' | 'error';
       <img
         [src]="assets.admissionsFormIllustration"
         alt=""
-        class="h-[480px] w-[445px] max-w-full shrink-0 self-center object-contain object-center md:h-[800px] md:w-[640px] md:mr-12 md:object-fill"
+        class="h-[480px] w-[445px] max-w-full shrink-0 self-center object-contain object-center md:h-[560px] md:w-[400px] xl:mr-12 xl:h-[800px] xl:w-[640px] xl:object-fill"
       />
     </section>
   `,

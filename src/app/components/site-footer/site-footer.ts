@@ -6,9 +6,9 @@ import { figmaAssets } from '../../shared/figma-assets';
   selector: 'app-site-footer',
   imports: [RouterLink],
   template: `
-    <footer class="bg-brand-ink-soft flex w-full flex-col items-start gap-[78px] px-6 py-10 md:px-[100px] md:py-20">
-      <div class="flex w-full flex-col items-start gap-10 lg:flex-row lg:items-start lg:gap-[142px]">
-        <div class="flex w-full max-w-[458px] flex-col items-start gap-10">
+    <footer class="bg-brand-ink-soft flex w-full flex-col items-start gap-[78px] px-6 py-10 md:px-12 lg:px-[100px] md:py-20">
+      <div class="flex w-full flex-col items-start gap-10 md:grid md:grid-cols-[220px_minmax(0,376px)] md:gap-x-16 xl:flex xl:flex-row xl:items-start xl:gap-[142px]">
+        <div class="flex w-full max-w-[458px] flex-col items-start gap-10 md:col-span-2">
           <div class="flex items-center gap-3">
             <img [src]="assets.logo" alt="My School logo" class="size-[90px] object-cover" />
             <div class="flex items-center overflow-hidden rounded-lg">
@@ -16,15 +16,15 @@ import { figmaAssets } from '../../shared/figma-assets';
               <span class="bg-brand-teal px-[6px] py-[5px] text-[24px] font-bold text-white">SCHOOL</span>
             </div>
           </div>
-          <p class="text-[18px] whitespace-pre-wrap text-[#dedede]">
+          <p class="text-[16px] md:text-[18px] whitespace-pre-wrap text-[#dedede]">
             Learning Beyond Academics. Growing Beyond Expectations. A learner-centric CBSE institution serving Pune
             since 2012.
           </p>
         </div>
 
         <div class="flex w-[220px] shrink-0 flex-col items-start gap-10">
-          <p class="text-brand-orange w-full text-[20px] font-medium">Navigation</p>
-          <nav class="flex w-full flex-col items-start gap-5 text-[18px] text-[#dedede]">
+          <p class="text-brand-orange w-full text-[18px] md:text-[20px] font-medium">Navigation</p>
+          <nav class="flex w-full flex-col items-start gap-5 text-[16px] md:text-[18px] text-[#dedede]">
             @for (link of navLinks; track link.label) {
               @if (link.external) {
                 <a [href]="link.href" target="_blank" rel="noopener noreferrer" class="transition-colors hover:text-brand-orange">
@@ -38,10 +38,10 @@ import { figmaAssets } from '../../shared/figma-assets';
         </div>
 
         <div class="flex w-full max-w-[376px] flex-col items-start gap-10">
-          <p class="text-brand-orange text-[20px] font-medium">Blog</p>
+          <p class="text-brand-orange text-[18px] md:text-[20px] font-medium">Blog</p>
           <div class="flex w-full flex-col items-start gap-5">
             <div class="flex w-full flex-col items-start gap-5">
-              <p class="w-full text-[18px] text-[#dedede]">
+              <p class="w-full text-[16px] md:text-[18px] text-[#dedede]">
                 Parenting tips, events &amp; school updates — straight to your inbox.
               </p>
               <form class="flex w-full items-stretch" (submit)="goToEnquiry(); $event.preventDefault()">
