@@ -7,25 +7,25 @@ import { figmaAssets } from '../../shared/figma-assets';
   imports: [RouterLink],
   template: `
     <section class="flex w-full flex-col items-stretch overflow-hidden lg:flex-row">
-      <div class="relative flex w-full flex-col items-start justify-center gap-2.5 bg-[#f6f6f6] px-6 py-16 md:px-[100px] lg:w-[45%]">
-        <div class="relative flex max-w-[387px] flex-col items-start gap-2.5">
-          <p aria-hidden="true" class="pointer-events-none absolute top-full left-32 z-10 -translate-y-1/2 text-[110px] leading-none font-bold whitespace-nowrap text-black/[0.06] select-none md:text-[180px]">
+      <div class="relative flex w-full flex-col items-start justify-center gap-2.5 lg:justify-start bg-[#f6f6f6] px-6 py-16 md:px-[100px] lg:w-[45%]">
+        <div class="relative flex max-w-[387px] flex-col items-start gap-2.5 lg:mt-3">
+          <p aria-hidden="true" class="pointer-events-none absolute top-full left-32 z-10 -translate-y-1/4 text-[110px] leading-none font-bold whitespace-nowrap text-black/[0.06] select-none md:text-[180px]">
             START
           </p>
           <div class="relative z-20 flex flex-col items-start gap-3.5">
-            <p class="text-[16px] font-medium text-black">Admissions Open 2026–27</p>
+            <p class="text-[18px] font-medium text-black">Admissions Open 2026–27</p>
             <h2 class="text-[48px] leading-tight font-bold whitespace-nowrap text-black">
               Their story<br />
               begins <span class="text-brand-orange">with you.</span>
             </h2>
           </div>
-          <p class="relative z-20 text-[16px] text-black">
+          <p class="relative z-20 text-[18px] text-black">
             Seats are limited. Schedule a visit and see why hundreds of families choose My School every year.
           </p>
         </div>
       </div>
 
-      <div class="bg-brand-orange relative flex w-full flex-col items-center justify-center gap-10 overflow-hidden px-6 py-16 md:px-[100px] lg:-ml-[9%] lg:w-[64%] lg:[clip-path:polygon(9%_0,100%_0,100%_100%,0_100%)]">
+      <div class="bg-brand-orange relative flex w-full flex-col items-center justify-center gap-10 lg:justify-start overflow-hidden px-6 py-16 md:px-[100px] lg:-ml-[9%] lg:w-[64%] lg:[clip-path:polygon(9%_0,100%_0,100%_100%,0_100%)]">
         <p class="relative max-w-[424px] text-center text-[48px] font-bold text-white">
           Begin Your Child's<br />
           Journey Today

@@ -23,7 +23,7 @@ interface Pillar {
           </div>
           <h2 class="flex flex-wrap gap-x-5 text-[48px] font-bold text-black">
             <span class="text-brand-teal">Vision.</span>
-            <span><span class="text-brand-orange">Mission</span>.</span>
+            <span class="text-brand-orange">Mission.</span>
             <span class="text-brand-teal">Values.</span>
           </h2>
         </div>
@@ -40,7 +40,7 @@ interface Pillar {
               </p>
               <div class="flex flex-col items-start gap-3">
                 <p
-                  class="text-[22px] font-semibold"
+                  class="text-[22px] font-bold"
                   [class.text-brand-teal]="pillar.labelColor === 'teal'"
                   [class.text-brand-orange]="pillar.labelColor === 'orange'"
                 >

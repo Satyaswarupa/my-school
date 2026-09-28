@@ -7,7 +7,7 @@ import { figmaAssets } from '../../shared/figma-assets';
   imports: [SiteHeader],
   template: `
     <section class="relative overflow-hidden bg-white">
-      <p class="pointer-events-none absolute top-[75px] left-[calc(41.67%+58px)] hidden w-[682px] text-[200px] leading-none font-bold whitespace-nowrap text-black/[0.08] select-none md:block">
+      <p class="pointer-events-none absolute top-[110px] left-[calc(41.67%+58px)] hidden w-[682px] text-[200px] leading-none font-bold whitespace-nowrap text-black/[0.08] select-none md:block">
         ADMIT
       </p>
 

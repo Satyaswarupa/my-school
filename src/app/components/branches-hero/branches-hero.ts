@@ -17,10 +17,10 @@ import { figmaAssets } from '../../shared/figma-assets';
           <span class="text-brand-orange text-[22px] font-medium">Our Footprint</span>
         </div>
         <div class="flex max-w-[917px] flex-col items-start gap-5 text-black">
-          <h1 class="text-[48px] font-bold">
+          <h1 class="text-[48px] leading-tight font-bold">
             Our Learning <span class="text-brand-orange">Hubs</span>
           </h1>
-          <p class="text-[18px]">
+          <p class="text-[18px] leading-snug">
             Wherever you find us, you'll discover a learning environment built on trust, values, and academic
             excellence.
           </p>

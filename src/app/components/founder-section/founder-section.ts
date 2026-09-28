@@ -23,7 +23,7 @@ import { figmaAssets } from '../../shared/figma-assets';
   template: `
     <section class="relative mx-auto flex w-full max-w-[1440px] flex-col items-start gap-10 overflow-hidden px-6 py-10 md:px-[100px] md:py-16 md:min-h-[779px]">
       <div class="relative flex w-full flex-col items-start gap-8 lg:flex-row lg:gap-10">
-        <div class="flex w-full max-w-[640px] shrink-0 flex-col items-start gap-3.5 lg:w-1/2">
+        <div class="flex w-full max-w-[740px] shrink-0 flex-col items-start gap-3.5 lg:w-[58%]">
           <div class="flex items-center gap-3">
             <img [src]="assets.lineShortAlt" alt="" class="h-px w-[46px]" />
             <span class="text-brand-teal text-[18px] font-medium">Meet the Visionary</span>
@@ -43,7 +43,7 @@ import { figmaAssets } from '../../shared/figma-assets';
       </div>
 
       <div class="relative flex w-full flex-col items-start gap-8 md:flex-row md:gap-10">
-        <div class="flex w-full max-w-[640px] shrink-0 flex-col items-start gap-4 md:w-1/2">
+        <div class="flex w-full max-w-[740px] shrink-0 flex-col items-start gap-4 md:-mt-16 md:w-[58%]">
           <img
             [src]="assets.founderPhoto"
             alt="Dr. Mona Chadda, Founder of My School"
@@ -160,7 +160,7 @@ export class FounderSection {
     ].join('\n'),
   ];
 
-  protected readonly previewStanzas = this.poemStanzas.slice(0, 4);
+  protected readonly previewStanzas = this.poemStanzas.slice(0, 3);
 
   protected readonly visibleStanzas = computed(() => (this.expanded() ? this.poemStanzas : this.previewStanzas));
 

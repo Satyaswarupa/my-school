@@ -71,7 +71,7 @@ export class BranchCardsSection {
   protected readonly cards: BranchCard[] = [
     {
       theme: 'light',
-      bgColor: 'rgba(220,220,220,0.9)',
+      bgColor: 'rgba(238,238,238,0.9)',
       tag: 'Main Campus · Est. 2022',
       titleLine1: 'MY SCHOOL,',
       titleLine2: 'Wakad Campus',

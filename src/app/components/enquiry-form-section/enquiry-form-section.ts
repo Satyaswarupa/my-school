@@ -72,7 +72,7 @@ type SubmitStatus = 'idle' | 'sending' | 'success' | 'error';
       <img
         [src]="assets.admissionsFormIllustration"
         alt=""
-        class="h-[480px] w-[445px] max-w-full shrink-0 self-center object-contain object-center md:h-[740px] md:w-[560px] md:mr-32 md:object-fill"
+        class="h-[480px] w-[445px] max-w-full shrink-0 self-center object-contain object-center md:h-[800px] md:w-[640px] md:mr-12 md:object-fill"
       />
     </section>
   `,

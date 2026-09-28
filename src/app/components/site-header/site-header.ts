@@ -66,7 +66,10 @@ interface NavLink {
         <div class="hidden items-center gap-4 lg:flex">
           <a
             href="#"
-            class="whitespace-nowrap rounded border border-[#a4a4a4] px-5 py-2.5 text-base font-medium"
+            class="whitespace-nowrap rounded border px-5 py-2.5 text-base font-medium"
+            [class.border-2]="variant() === 'overlay'"
+            [class.border-white]="variant() === 'overlay'"
+            [class.border-[#a4a4a4]]="variant() === 'light'"
             [class.text-white]="variant() === 'overlay'"
             [class.text-[#2a2a2a]]="variant() === 'light'"
           >
