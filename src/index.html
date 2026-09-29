@@ -12,9 +12,9 @@
   <script>
     // Desktop screens narrower than the 1440px design (14" laptops, browser zoom) render the
     // 1440 layout scaled down to fit, so text, images and the nav keep the same proportions.
-    // Below 1280px the responsive tablet/phone layouts take over instead.
+    // Below 1024px the responsive tablet/phone layouts take over instead.
     (function () {
-      var DESIGN = 1440, MIN = 1280, root = document.documentElement;
+      var DESIGN = 1440, MIN = 1024, root = document.documentElement;
       function fit() {
         root.style.zoom = '';
         var w = root.clientWidth;
