@@ -7,9 +7,9 @@ import { figmaAssets } from '../../shared/figma-assets';
   imports: [RouterLink],
   template: `
     <section class="flex w-full flex-col items-stretch overflow-hidden xl:flex-row">
-      <div class="relative flex w-full flex-col items-start justify-center gap-2.5 xl:justify-start bg-[#f6f6f6] px-6 py-16 sm:pb-28 md:px-12 md:pb-40 lg:px-[100px] xl:w-[45%] xl:pb-16">
-        <div class="relative flex max-w-[387px] flex-col items-start gap-2.5 xl:mt-3">
-          <p aria-hidden="true" class="pointer-events-none absolute top-full left-12 z-10 -translate-y-1/4 text-[80px] leading-none font-bold whitespace-nowrap text-black/[0.06] select-none sm:text-[110px] md:left-32 md:text-[180px]">
+      <div class="relative flex w-full flex-col items-start justify-center gap-2.5 xl:justify-start bg-[#f6f6f6] px-6 py-16 sm:pb-28 md:px-12 md:pb-40 lg:px-[100px] xl:w-[52%] xl:pb-16">
+        <div class="relative flex max-w-[480px] flex-col items-start gap-2.5 xl:mt-3">
+          <p aria-hidden="true" class="pointer-events-none absolute top-full left-12 z-10 mt-8 text-[64px] leading-none font-bold whitespace-nowrap text-black/[0.06] select-none sm:text-[90px] md:left-32 md:text-[140px]">
             START
           </p>
           <div class="relative z-20 flex flex-col items-start gap-3.5">
@@ -25,7 +25,7 @@ import { figmaAssets } from '../../shared/figma-assets';
         </div>
       </div>
 
-      <div class="bg-brand-orange relative flex w-full flex-col items-center justify-center gap-10 xl:justify-start overflow-hidden px-6 py-16 md:px-12 lg:px-[100px] xl:-ml-[9%] xl:w-[64%] xl:[clip-path:polygon(9%_0,100%_0,100%_100%,0_100%)]">
+      <div class="bg-brand-orange relative flex w-full flex-col items-center justify-center gap-10 xl:justify-start overflow-hidden px-6 py-16 md:px-12 lg:px-[100px] xl:-ml-[9%] xl:w-[57%] xl:[clip-path:polygon(9%_0,100%_0,100%_100%,0_100%)]">
         <p class="relative max-w-[424px] text-center text-[32px] md:text-[40px] lg:text-[48px] font-bold text-white">
           Begin Your Child's<br />
           Journey Today

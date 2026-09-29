@@ -7,7 +7,7 @@ import { figmaAssets } from '../../shared/figma-assets';
   imports: [SiteHeader],
   template: `
     <section class="relative overflow-hidden bg-white">
-      <img [src]="assets.galleryHeroTexture" alt="" class="pointer-events-none absolute inset-x-0 top-0 h-[313px] w-full object-cover opacity-10" />
+      <img [src]="assets.galleryHeroTexture" alt="" class="pointer-events-none absolute inset-x-0 top-10 h-[313px] w-full object-cover opacity-10" />
 
       <app-site-header variant="light" activeLink="Gallery" class="relative" />
 

@@ -49,7 +49,7 @@ import { figmaAssets } from '../../shared/figma-assets';
             alt="Dr. Mona Chadda, Founder of My School"
             class="h-auto w-full rounded-lg object-fill lg:h-[400px] xl:h-[500px]"
           />
-          <div class="flex w-full flex-col items-center">
+          <div class="mt-8 flex w-full flex-col items-center">
             <p class="w-fit border-b-2 border-black pb-1 text-[18px] md:text-[22px] font-bold text-black">Dr. Mona Chadda,</p>
             <p class="text-base text-black">Founder, My School</p>
           </div>

@@ -1,5 +1,5 @@
-import { Component, inject, signal } from '@angular/core';
-import { Router, RouterLink } from '@angular/router';
+import { Component, signal } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { figmaAssets } from '../../shared/figma-assets';
 
 @Component({
@@ -44,10 +44,11 @@ import { figmaAssets } from '../../shared/figma-assets';
               <p class="w-full text-[16px] md:text-[18px] text-[#dedede]">
                 Parenting tips, events &amp; school updates — straight to your inbox.
               </p>
-              <form class="flex w-full items-stretch" (submit)="goToEnquiry(); $event.preventDefault()">
+              <form class="flex w-full items-stretch" (submit)="goToSubscribe(); $event.preventDefault()">
                 <div class="flex flex-1 items-center border border-[#5a7a80] px-2.5 py-5">
                   <input
                     type="email"
+                    required
                     placeholder="your@email.com"
                     [value]="footerEmail()"
                     (input)="footerEmail.set($any($event.target).value)"
@@ -84,7 +85,6 @@ import { figmaAssets } from '../../shared/figma-assets';
 })
 export class SiteFooter {
   protected readonly assets = figmaAssets;
-  private readonly router = inject(Router);
 
   protected readonly footerEmail = signal('');
 
@@ -97,11 +97,9 @@ export class SiteFooter {
     { label: 'Blog', href: 'https://www.monachadda.com/blog', external: true },
   ];
 
-  protected goToEnquiry(): void {
-    const email = this.footerEmail().trim();
-    this.router.navigate(['/admissions'], {
-      queryParams: email ? { email } : {},
-      fragment: 'lets-connect',
-    });
+  // Newsletter sign-up lives in the footer of the founder's site; the email can't be prefilled cross-site.
+  protected goToSubscribe(): void {
+    this.footerEmail.set('');
+    window.location.href = 'https://www.monachadda.com/#SITE_FOOTER';
   }
 }

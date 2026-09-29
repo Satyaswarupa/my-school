@@ -113,13 +113,13 @@ export class GalleryCollage {
 
   // Clustered layout (after the reference design); listed clockwise from the top
   protected readonly collagePhotos: CollagePhoto[] = [
-    { src: figmaAssets.collage31, label: 'Music', accent: 'teal', leftPct: 49.29, topPct: 9.36, widthPct: 16, heightPct: circleHeightPct(16) },
+    { src: figmaAssets.collage31, label: 'Music', accent: 'teal', leftPct: 43.5, topPct: 9.36, widthPct: 16, heightPct: circleHeightPct(16) },
     { src: figmaAssets.collage32, label: 'Arts & Crafts', accent: 'orange', leftPct: 64.5, topPct: 19.46, widthPct: 16, heightPct: circleHeightPct(16) },
     { src: figmaAssets.collage33, label: 'Dance', accent: 'teal', leftPct: 60.9, topPct: 43.1, widthPct: 20, heightPct: circleHeightPct(20) },
     // crop toward the kicking student on the right
     { src: figmaAssets.galleryPhoto3, label: 'Sports', accent: 'teal', leftPct: 53.53, topPct: 68.79, widthPct: 16, heightPct: circleHeightPct(16), focus: 'right center' },
     { src: figmaAssets.collage34, label: 'Science & Innovation', accent: 'orange', leftPct: 33.61, topPct: 56.62, widthPct: CIRCLE_WIDTH_PCT, heightPct: circleHeightPct(CIRCLE_WIDTH_PCT) },
-    { src: figmaAssets.collage35, label: 'Drama', accent: 'teal', leftPct: 19.5, topPct: 42.98, widthPct: 16, heightPct: circleHeightPct(16) },
-    { src: figmaAssets.collage36, label: 'Public Speaking', accent: 'orange', leftPct: 20.76, topPct: 13.29, widthPct: 20, heightPct: circleHeightPct(20) },
+    { src: figmaAssets.collage35, label: 'Drama', accent: 'teal', leftPct: 17, topPct: 42.98, widthPct: 16, heightPct: circleHeightPct(16) },
+    { src: figmaAssets.collage36, label: 'Public Speaking', accent: 'orange', leftPct: 18.25, topPct: 13.29, widthPct: 20, heightPct: circleHeightPct(20) },
   ];
 }

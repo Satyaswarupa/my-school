@@ -43,7 +43,7 @@ import { figmaAssets } from '../../shared/figma-assets';
         <img
           [src]="assets.creativeSideImage"
           alt="Students at My School"
-          class="aspect-[3/2] w-full rounded-lg object-cover xl:mt-16 xl:-mr-[100px] xl:w-0 xl:max-w-[720px] xl:min-w-0 xl:flex-1 xl:rounded-none"
+          class="aspect-[3/2] w-full rounded-lg object-cover xl:mt-16 xl:ml-auto xl:w-0 xl:max-w-[600px] xl:min-w-0 xl:flex-1"
         />
       </div>
     </section>
