@@ -29,7 +29,7 @@ interface NavLink {
           @if (link.routed) {
             <a
               [routerLink]="link.href"
-              class="whitespace-nowrap text-[14px]"
+              class="whitespace-nowrap text-[15px]"
               [class.font-bold]="activeLink() === link.label"
               [class.text-brand-orange]="activeLink() === link.label"
               [class.font-semibold]="activeLink() !== link.label"
@@ -43,7 +43,7 @@ interface NavLink {
               [href]="link.href"
               [attr.target]="link.external ? '_blank' : null"
               [attr.rel]="link.external ? 'noopener noreferrer' : null"
-              class="whitespace-nowrap text-[14px]"
+              class="whitespace-nowrap text-[15px]"
               [class.font-bold]="activeLink() === link.label"
               [class.text-brand-orange]="activeLink() === link.label"
               [class.font-semibold]="activeLink() !== link.label"
