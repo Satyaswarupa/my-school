@@ -66,9 +66,15 @@ import { figmaAssets } from '../../shared/figma-assets';
             <p class="text-base text-[#dedede]">Mon – Sat · 8:00 am – 4:00 pm</p>
           </div>
           <div class="flex items-center gap-3">
-            <img [src]="assets.instagram" alt="Instagram" class="size-6" />
-            <img [src]="assets.linkedin" alt="LinkedIn" class="size-6" />
-            <img [src]="assets.facebook" alt="Facebook" class="size-6" />
+            <a href="https://www.instagram.com/myschool.wakad?stkn=MXZ3endueW16MTV3aQ==" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <img [src]="assets.instagram" alt="" class="size-6" />
+            </a>
+            <a href="https://www.linkedin.com/in/my-school-199915383" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <img [src]="assets.linkedin" alt="" class="size-6" />
+            </a>
+            <a href="https://www.facebook.com/share/1CCBUxHnZy/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <img [src]="assets.facebook" alt="" class="size-6" />
+            </a>
           </div>
         </div>
       </div>
@@ -76,7 +82,7 @@ import { figmaAssets } from '../../shared/figma-assets';
       <div class="flex w-full flex-col items-start gap-5">
         <img [src]="assets.footerDivider" alt="" class="h-px w-full" />
         <div class="flex w-full flex-col items-start justify-between gap-2 text-base text-[#dedede] sm:flex-row sm:items-center">
-          <p>© 2025 My School, Wakad. All rights reserved.</p>
+          <p>© 2026 My School, Wakad. All rights reserved.</p>
           <p>Wakad &amp; Pimpri · Pune · Maharashtra · India</p>
         </div>
       </div>
