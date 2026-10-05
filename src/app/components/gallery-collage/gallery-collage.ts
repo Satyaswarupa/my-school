@@ -104,22 +104,21 @@ export class GalleryCollage {
   protected readonly assets = figmaAssets;
 
   protected readonly stripPhotos = [
-    figmaAssets.photo37,
-    figmaAssets.photo38,
-    figmaAssets.photo39,
-    figmaAssets.photo40,
-    figmaAssets.photo41,
+    'https://res.cloudinary.com/dxlcnrwrq/image/upload/v1791224311/PRK09189.jpg',
+    'https://res.cloudinary.com/dxlcnrwrq/image/upload/v1791224310/PRK09337.jpg',
+    'https://res.cloudinary.com/dxlcnrwrq/image/upload/v1791224204/MS_image_1.webp',
+    'https://res.cloudinary.com/dxlcnrwrq/image/upload/v1791224311/PRK00388.jpg',
+    'https://res.cloudinary.com/dxlcnrwrq/image/upload/v1791224204/MS_image_03.webp',
   ];
 
   // Clustered layout (after the reference design); listed clockwise from the top
   protected readonly collagePhotos: CollagePhoto[] = [
     { src: figmaAssets.collage31, label: 'Music', accent: 'teal', leftPct: 43.5, topPct: 9.36, widthPct: 16, heightPct: circleHeightPct(16) },
     { src: figmaAssets.collage32, label: 'Arts & Crafts', accent: 'orange', leftPct: 64.5, topPct: 19.46, widthPct: 16, heightPct: circleHeightPct(16) },
-    { src: figmaAssets.collage33, label: 'Dance', accent: 'teal', leftPct: 60.9, topPct: 43.1, widthPct: 20, heightPct: circleHeightPct(20) },
-    // crop toward the kicking student on the right
-    { src: figmaAssets.galleryPhoto3, label: 'Sports', accent: 'teal', leftPct: 53.53, topPct: 68.79, widthPct: 16, heightPct: circleHeightPct(16), focus: 'right center' },
+    { src: 'https://res.cloudinary.com/dxlcnrwrq/image/upload/v1791224203/MS_image_02.webp', label: 'Dance', accent: 'teal', leftPct: 60.9, topPct: 43.1, widthPct: 20, heightPct: circleHeightPct(20) },
+    { src: 'https://res.cloudinary.com/dxlcnrwrq/image/upload/v1791224310/PRK09337.jpg', label: 'Sports', accent: 'teal', leftPct: 53.53, topPct: 68.79, widthPct: 16, heightPct: circleHeightPct(16) },
     { src: figmaAssets.collage34, label: 'Science & Innovation', accent: 'orange', leftPct: 33.61, topPct: 56.62, widthPct: CIRCLE_WIDTH_PCT, heightPct: circleHeightPct(CIRCLE_WIDTH_PCT) },
-    { src: figmaAssets.collage35, label: 'Drama', accent: 'teal', leftPct: 17, topPct: 42.98, widthPct: 16, heightPct: circleHeightPct(16) },
+    { src: 'https://myschoolpune.org/wp-content/uploads/2025/06/DSC09773.webp', label: 'Drama', accent: 'teal', leftPct: 17, topPct: 42.98, widthPct: 16, heightPct: circleHeightPct(16) },
     { src: figmaAssets.collage36, label: 'Public Speaking', accent: 'orange', leftPct: 18.25, topPct: 13.29, widthPct: 20, heightPct: circleHeightPct(20) },
   ];
 }

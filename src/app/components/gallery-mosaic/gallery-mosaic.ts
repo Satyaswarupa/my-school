@@ -1,4 +1,5 @@
-import { Component, computed, input } from '@angular/core';
+import { Component, computed, inject, input, signal } from '@angular/core';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { figmaAssets } from '../../shared/figma-assets';
 
 interface GalleryPhoto {
@@ -13,42 +14,31 @@ interface GalleryPhoto {
   imports: [],
   template: `
     @if (activeCategory() === 'All') {
-      <section class="flex w-full flex-col gap-2.5 overflow-hidden md:aspect-[1440/915] md:flex-row">
-        <div class="flex w-full min-h-0 flex-col gap-2.5 md:w-1/2">
-          <div class="relative min-h-0 aspect-[812/541] md:aspect-auto md:[flex:541_1_0]">
-            <img [src]="assets.galleryPhoto1" alt="Smart classroom" class="size-full object-cover" />
+      <section class="grid w-full grid-cols-1 gap-2.5 px-2.5 py-2.5 sm:grid-cols-2 lg:grid-cols-3">
+        @for (photo of visibleAllPhotos(); track photo.src + photo.category) {
+          <div class="relative aspect-[4/3] overflow-hidden">
+            <img [src]="photo.src" [alt]="photo.alt" class="size-full object-cover" />
             <span class="absolute right-2.5 bottom-2.5 rounded bg-[#525252] px-2.5 py-1.5 text-xs font-medium text-white">
-              Smart Classrooms
+              {{ photo.label }}
             </span>
           </div>
-          <div class="relative min-h-0 aspect-[616/374] md:aspect-auto md:[flex:374_1_0]">
-            <img [src]="assets.galleryPhoto3" alt="Sports day" class="size-full object-cover" />
-            <span class="absolute right-2.5 bottom-2.5 rounded bg-[#525252] px-2.5 py-1.5 text-xs font-medium text-white">
-              Sports
-            </span>
+        }
+      </section>
+    } @else if (activeCategory() === 'Videos') {
+      <section class="grid w-full grid-cols-1 gap-5 px-6 py-6 md:grid-cols-2 md:px-12 lg:px-[100px]">
+        @for (video of videos; track video.id) {
+          <div class="min-w-0 overflow-hidden rounded-lg bg-[#111]">
+            <iframe
+              [src]="video.embedUrl"
+              [title]="video.title"
+              class="aspect-video w-full"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
           </div>
-        </div>
-
-        <div class="flex w-full min-h-0 flex-col gap-2.5 md:w-1/2">
-          <div class="relative min-h-0 aspect-[628/541] md:aspect-auto md:[flex:541_1_0]">
-            <img [src]="assets.galleryPhoto2" alt="Campus life" class="size-full object-cover" />
-            <span class="absolute right-2.5 bottom-2.5 rounded bg-[#525252] px-2.5 py-1.5 text-xs font-medium text-white">
-              Campus Life
-            </span>
-          </div>
-          <div class="relative min-h-0 aspect-[824/187] md:aspect-auto md:[flex:187_1_0]">
-            <img [src]="assets.galleryPhoto4" alt="Arts and crafts" class="size-full object-cover" />
-            <span class="absolute right-2.5 bottom-2.5 rounded bg-[#525252] px-2.5 py-1.5 text-xs font-medium text-white">
-              Arts & Crafts
-            </span>
-          </div>
-          <div class="relative min-h-0 aspect-[824/187] md:aspect-auto md:[flex:187_1_0]">
-            <img [src]="assets.galleryPhoto5" alt="Students in class" class="size-full object-cover" />
-            <span class="absolute right-2.5 bottom-2.5 rounded bg-[#525252] px-2.5 py-1.5 text-xs font-medium text-white">
-              Students
-            </span>
-          </div>
-        </div>
+        }
       </section>
     } @else if (filteredPhotos().length) {
       <section class="grid w-full grid-cols-1 gap-2.5 px-2.5 py-2.5 sm:grid-cols-2 lg:grid-cols-3">
@@ -67,23 +57,73 @@ interface GalleryPhoto {
       </p>
     }
 
-    <div class="flex w-full items-center justify-center py-6">
-      <a href="#" class="text-brand-teal text-[24px] font-semibold underline">Many More Moments</a>
-    </div>
+    @if (activeCategory() === 'All' && allPhotos().length > 6) {
+      <div class="flex w-full items-center justify-center py-6">
+        <button
+          type="button"
+          class="cursor-pointer text-brand-teal text-[24px] font-semibold underline"
+          [attr.aria-expanded]="allPhotosExpanded()"
+          (click)="allPhotosExpanded.update((expanded) => !expanded)"
+        >
+          {{ allPhotosExpanded() ? 'Show Fewer Moments' : 'Many More Moments' }}
+        </button>
+      </div>
+    }
   `,
 })
 export class GalleryMosaic {
-  protected readonly assets = figmaAssets;
+  private readonly sanitizer = inject(DomSanitizer);
 
   readonly activeCategory = input('All');
+  protected readonly allPhotosExpanded = signal(false);
+
+  protected readonly videos: { id: string; title: string; embedUrl: SafeResourceUrl }[] = [
+    'tEvX8eNk9ZM',
+    'V-I0c2vX0pg',
+    'yaVDOc3m0J4',
+    'rXKKq36jpPo',
+    'Xc7PLrRht9c',
+    'YA8BimiRFD0',
+    'UIqKAQO8OGM',
+    '8Lx-eOsJ2i0',
+    'LznVHkFQMBg',
+  ].map((id, index) => ({
+    id,
+    title: `My School video ${index + 1}`,
+    embedUrl: this.sanitizer.bypassSecurityTrustResourceUrl(`https://www.youtube-nocookie.com/embed/${id}`),
+  }));
 
   private readonly photos: GalleryPhoto[] = [
     { src: figmaAssets.galleryPhoto1, alt: 'Smart classroom', label: 'Smart Classrooms', category: 'Academics' },
-    { src: figmaAssets.galleryPhoto2, alt: 'Campus life', label: 'Campus Life', category: 'Campus Life' },
-    { src: figmaAssets.galleryPhoto3, alt: 'Sports day', label: 'Sports', category: 'Sports' },
     { src: figmaAssets.galleryPhoto4, alt: 'Arts and crafts', label: 'Arts & Crafts', category: 'Arts' },
     { src: figmaAssets.galleryPhoto5, alt: 'Students in class', label: 'Students', category: 'Academics' },
+    { src: 'https://res.cloudinary.com/dxlcnrwrq/image/upload/v1791224312/PRK00384.jpg', alt: 'Campus life photo 1', label: 'Campus Life', category: 'Campus Life' },
+    { src: 'https://res.cloudinary.com/dxlcnrwrq/image/upload/v1791224311/PRK00385.jpg', alt: 'Campus life photo 2', label: 'Campus Life', category: 'Campus Life' },
+    { src: 'https://res.cloudinary.com/dxlcnrwrq/image/upload/v1791224311/PRK09189.jpg', alt: 'Campus life photo 3', label: 'Campus Life', category: 'Campus Life' },
+    { src: 'https://res.cloudinary.com/dxlcnrwrq/image/upload/v1791224309/PRK09191.jpg', alt: 'Campus life photo 4', label: 'Campus Life', category: 'Campus Life' },
+    { src: 'https://res.cloudinary.com/dxlcnrwrq/image/upload/v1791224204/MS_image_1.webp', alt: 'Campus life photo 5', label: 'Campus Life', category: 'Campus Life' },
+    { src: 'https://drive.google.com/thumbnail?id=1wbSneRuBygVsRQU0bLHZA3HrnwtpIvWh&sz=w1200', alt: 'Sports photo 1', label: 'Sports', category: 'Sports' },
+    { src: 'https://drive.google.com/thumbnail?id=1oeR18cBDqSMihe9oJCcFKxoafvUB46wx&sz=w1200', alt: 'Sports photo 2', label: 'Sports', category: 'Sports' },
+    { src: 'https://drive.google.com/thumbnail?id=1DhDAm4RuOK93MdO7jtH-w67rdeBXEIPE&sz=w1200', alt: 'Sports photo 3', label: 'Sports', category: 'Sports' },
+    { src: 'https://drive.google.com/thumbnail?id=12B_ndCCRZgHpyj1ETd6flI-O7bJRTfid&sz=w1200', alt: 'Sports photo 4', label: 'Sports', category: 'Sports' },
+    { src: 'https://drive.google.com/thumbnail?id=1W2Z6GpE9aKfR4i3j19qrFOLa7Ajianf5&sz=w1200', alt: 'Sports photo 5', label: 'Sports', category: 'Sports' },
+    { src: 'https://drive.google.com/thumbnail?id=12MjqCTAw1jGbSFIKV-f8K3Zv82IlnzTL&sz=w1200', alt: 'Sports photo 6', label: 'Sports', category: 'Sports' },
+    { src: 'https://drive.google.com/thumbnail?id=14dBWxUxmD4QCL6_m8imSZfrJCnuCJgzr&sz=w1200', alt: 'Sports photo 7', label: 'Sports', category: 'Sports' },
+    { src: 'https://drive.google.com/thumbnail?id=1ppYOj6fhXsa6tl1TQ8C-EaGX52Hvgxa4&sz=w1200', alt: 'Sports photo 8', label: 'Sports', category: 'Sports' },
+    { src: 'https://drive.google.com/thumbnail?id=19iO8cISU2kVeL7VzhYnXsDbWbzAW05HP&sz=w1200', alt: 'Sports photo 9', label: 'Sports', category: 'Sports' },
+    { src: 'https://res.cloudinary.com/dxlcnrwrq/image/upload/v1791224311/PRK00385.jpg', alt: 'School event photo 1', label: 'Events', category: 'Events' },
+    { src: 'https://res.cloudinary.com/dxlcnrwrq/image/upload/v1791224310/PRK09493.jpg', alt: 'School event photo 2', label: 'Events', category: 'Events' },
+    { src: 'https://res.cloudinary.com/dxlcnrwrq/image/upload/v1791224203/MS_image_02.webp', alt: 'School event photo 3', label: 'Events', category: 'Events' },
+    { src: 'https://res.cloudinary.com/dxlcnrwrq/image/upload/v1791224204/MS_image_03.webp', alt: 'School event photo 4', label: 'Events', category: 'Events' },
   ];
+
+  protected readonly allPhotos = computed(() =>
+    this.photos.filter((photo) => ['Campus Life', 'Sports', 'Events'].includes(photo.category)),
+  );
+
+  protected readonly visibleAllPhotos = computed(() =>
+    this.allPhotosExpanded() ? this.allPhotos() : this.allPhotos().slice(0, 6),
+  );
 
   protected readonly filteredPhotos = computed(() =>
     this.photos.filter((photo) => photo.category === this.activeCategory()),

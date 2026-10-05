@@ -22,7 +22,7 @@ const AUTOPLAY_MS = 6000;
       (keydown.arrowleft)="prev()"
       (keydown.arrowright)="next()"
     >
-      <img [src]="assets.photo42" alt="" class="absolute inset-0 size-full object-cover opacity-20" />
+      <img src="https://res.cloudinary.com/dxlcnrwrq/image/upload/v1791224204/MS_Image_05.webp" alt="" class="absolute inset-0 size-full object-cover opacity-20" />
       <div class="absolute inset-0 bg-[rgba(94,94,94,0.52)]"></div>
 
       <div class="relative flex w-full max-w-[1239px] flex-col items-start gap-6">
