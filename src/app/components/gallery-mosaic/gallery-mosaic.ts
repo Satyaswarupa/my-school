@@ -115,6 +115,9 @@ export class GalleryMosaic {
     { src: 'https://res.cloudinary.com/dxlcnrwrq/image/upload/v1791224310/PRK09493.jpg', alt: 'School event photo 2', label: 'Events', category: 'Events' },
     { src: 'https://res.cloudinary.com/dxlcnrwrq/image/upload/v1791224203/MS_image_02.webp', alt: 'School event photo 3', label: 'Events', category: 'Events' },
     { src: 'https://res.cloudinary.com/dxlcnrwrq/image/upload/v1791224204/MS_image_03.webp', alt: 'School event photo 4', label: 'Events', category: 'Events' },
+    { src: figmaAssets.awardImage1, alt: 'Best CBSE school in western region of Maharashtra', label: 'Best CBSE school in western region of Maharashtra', category: 'Achievements' },
+    { src: figmaAssets.awardImage2, alt: 'Miss Mona Chadda awarded as BharatGuild I Impact Mentor', label: 'BharatGuild I Impact Mentor', category: 'Achievements' },
+    { src: figmaAssets.awardImage3, alt: 'Brand Impact: Best Emerging school in Pune', label: 'Best Emerging school in Pune', category: 'Achievements' },
   ];
 
   protected readonly allPhotos = computed(() =>

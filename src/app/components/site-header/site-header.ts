@@ -59,7 +59,7 @@ interface NavLink {
       <div class="flex shrink-0 items-center gap-2">
         <div class="hidden items-end gap-0.5 xl:flex">
           <img [src]="variant() === 'overlay' ? assets.callIcon : assets.callIconDark" alt="" class="size-4" />
-          <span class="whitespace-nowrap text-sm" [class.text-white]="variant() === 'overlay'" [class.text-[#2a2a2a]]="variant() === 'light'">
+          <span class="whitespace-nowrap text-sm font-bold" [class.text-white]="variant() === 'overlay'" [class.text-[#2a2a2a]]="variant() === 'light'">
             +91-9876543210
           </span>
         </div>
@@ -153,7 +153,7 @@ interface NavLink {
 
           <div class="my-2 flex items-center gap-2 px-3">
             <img [src]="variant() === 'overlay' ? assets.callIcon : assets.callIconDark" alt="" class="size-4" />
-            <span class="text-sm" [class.text-white]="variant() === 'overlay'" [class.text-[#2a2a2a]]="variant() === 'light'">
+            <span class="text-sm font-bold" [class.text-white]="variant() === 'overlay'" [class.text-[#2a2a2a]]="variant() === 'light'">
               +91-9876543210
             </span>
           </div>

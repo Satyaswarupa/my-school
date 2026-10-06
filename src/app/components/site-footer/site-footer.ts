@@ -16,9 +16,10 @@ import { figmaAssets } from '../../shared/figma-assets';
               <span class="bg-brand-teal px-[6px] py-[5px] text-[24px] font-bold text-white">SCHOOL</span>
             </div>
           </div>
-          <p class="text-[16px] md:text-[18px] whitespace-pre-wrap text-[#dedede]">
-            Learning Beyond Academics. Growing Beyond Expectations. A learner-centric CBSE institution serving Pune
-            since 2012.
+          <p class="text-[16px] leading-7 text-[#dedede] md:text-[18px]">
+            Learning Beyond Academics. Growing<br />
+            Beyond Expectations. A learner-centric<br />
+            CBSE institution serving Pune since 2012.
           </p>
         </div>
 
