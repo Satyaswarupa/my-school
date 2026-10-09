@@ -115,14 +115,30 @@ interface NavLink {
         </button>
       </div>
 
-      @if (menuOpen()) {
-        <div
-          class="absolute inset-x-0 top-full z-30 flex max-h-[calc(100vh-64px)] flex-col gap-1 overflow-y-auto border-t p-4 shadow-lg xl:hidden"
-          [class.bg-brand-ink]="variant() === 'overlay'"
-          [class.border-white/10]="variant() === 'overlay'"
-          [class.bg-white]="variant() === 'light'"
-          [class.border-black/10]="variant() === 'light'"
-        >
+      <div
+        class="fixed inset-0 z-40 bg-black/50 transition-opacity duration-300 xl:hidden"
+        [class.opacity-0]="!menuOpen()"
+        [class.pointer-events-none]="!menuOpen()"
+        (click)="menuOpen.set(false)"
+      ></div>
+
+      <aside
+        class="bg-brand-ink fixed inset-y-0 right-0 z-50 flex h-dvh w-[80%] max-w-[320px] flex-col gap-1 overflow-y-auto p-4 shadow-2xl transition-transform duration-300 xl:hidden"
+        [class.translate-x-full]="!menuOpen()"
+        [attr.aria-hidden]="!menuOpen()"
+        [attr.inert]="menuOpen() ? null : ''"
+      >
+          <button
+            type="button"
+            class="mb-2 flex size-10 items-center justify-center self-end rounded"
+            aria-label="Close navigation menu"
+            (click)="menuOpen.set(false)"
+          >
+            <svg viewBox="0 0 24 24" class="size-6 text-white">
+              <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none" />
+            </svg>
+          </button>
+
           @for (link of navLinks; track link.label) {
             @if (link.routed) {
               <a
@@ -131,8 +147,7 @@ interface NavLink {
                 [class.font-bold]="activeLink() === link.label"
                 [class.text-brand-orange]="activeLink() === link.label"
                 [class.font-semibold]="activeLink() !== link.label"
-                [class.text-white]="activeLink() !== link.label && variant() === 'overlay'"
-                [class.text-[#2a2a2a]]="activeLink() !== link.label && variant() === 'light'"
+                [class.text-white]="activeLink() !== link.label"
                 (click)="menuOpen.set(false)"
               >
                 {{ link.label }}
@@ -146,8 +161,7 @@ interface NavLink {
                 [class.font-bold]="activeLink() === link.label"
                 [class.text-brand-orange]="activeLink() === link.label"
                 [class.font-semibold]="activeLink() !== link.label"
-                [class.text-white]="activeLink() !== link.label && variant() === 'overlay'"
-                [class.text-[#2a2a2a]]="activeLink() !== link.label && variant() === 'light'"
+                [class.text-white]="activeLink() !== link.label"
                 (click)="menuOpen.set(false)"
               >
                 {{ link.label }}
@@ -156,18 +170,16 @@ interface NavLink {
           }
 
           <div class="my-2 flex items-center gap-2 px-3">
-            <img [src]="variant() === 'overlay' ? assets.callIcon : assets.callIconDark" alt="" class="size-4" />
-            <span class="text-sm font-bold" [class.text-white]="variant() === 'overlay'" [class.text-[#2a2a2a]]="variant() === 'light'">
+            <img [src]="assets.callIcon" alt="" class="size-4" />
+            <span class="text-sm font-bold text-white">
               +91-8055000123
             </span>
           </div>
 
-          <div class="flex items-center gap-3 px-3 pt-1 pb-2">
+          <div class="mt-auto flex items-center gap-2 px-3 pt-4 pb-2">
             <a
               href="#"
-              class="flex-1 rounded border border-[#a4a4a4] px-5 py-2.5 text-center text-base font-medium"
-              [class.text-white]="variant() === 'overlay'"
-              [class.text-[#2a2a2a]]="variant() === 'light'"
+              class="flex-1 rounded border border-[#a4a4a4] px-3 py-2 text-center text-sm font-medium text-white"
               (click)="menuOpen.set(false)"
             >
               Login
@@ -175,14 +187,13 @@ interface NavLink {
             <a
               routerLink="/admissions"
               fragment="lets-connect"
-              class="bg-brand-orange flex-1 rounded px-5 py-2.5 text-center text-base font-medium text-white"
+              class="bg-brand-orange flex-1 rounded px-3 py-2 text-center text-sm font-medium text-white"
               (click)="menuOpen.set(false)"
             >
               Enquire Now
             </a>
           </div>
-        </div>
-      }
+      </aside>
     </header>
   `,
 })
