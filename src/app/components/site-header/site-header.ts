@@ -116,15 +116,15 @@ interface NavLink {
       </div>
 
       <div
-        class="fixed inset-0 z-40 bg-black/50 transition-opacity duration-300 xl:hidden"
-        [class.opacity-0]="!menuOpen()"
-        [class.pointer-events-none]="!menuOpen()"
+        class="pointer-events-none fixed inset-0 z-40 bg-black/50 opacity-0 transition-opacity duration-300 xl:hidden"
+        [class.!opacity-100]="menuOpen()"
+        [class.!pointer-events-auto]="menuOpen()"
         (click)="menuOpen.set(false)"
       ></div>
 
       <aside
-        class="bg-brand-ink fixed inset-y-0 right-0 z-50 flex h-dvh w-[80%] max-w-[320px] flex-col gap-1 overflow-y-auto p-4 shadow-2xl transition-transform duration-300 xl:hidden"
-        [class.translate-x-full]="!menuOpen()"
+        class="bg-brand-ink fixed inset-y-0 right-0 z-50 flex h-dvh w-[80%] max-w-[320px] flex-col gap-1 overflow-y-auto p-4 shadow-2xl translate-x-full transition-transform duration-300 xl:hidden"
+        [class.!translate-x-0]="menuOpen()"
         [attr.aria-hidden]="!menuOpen()"
         [attr.inert]="menuOpen() ? null : ''"
       >
