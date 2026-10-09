@@ -77,12 +77,6 @@ export class DifferentiatorsSection {
     },
     {
       number: '06',
-      title: 'LOREM IPSUM',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    },
-    {
-      number: '07',
       title: 'Library Programme',
       description: 'A curated reading culture where children explore, imagine, and fall in love with learning.',
     },

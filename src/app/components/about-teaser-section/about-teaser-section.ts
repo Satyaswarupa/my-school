@@ -14,7 +14,7 @@ import { figmaAssets } from '../../shared/figma-assets';
           <div class="flex flex-col gap-3.5">
             <div class="flex items-center gap-3.5">
               <img [src]="assets.lineShort" alt="" class="h-px w-[46px] invert md:invert-0" />
-              <p class="text-brand-orange text-lg font-medium md:text-white">Est. 2012 · About Us</p>
+              <p class="text-brand-orange text-[22px] font-medium md:text-white">About Us</p>
             </div>
             <h1 class="text-[32px] md:text-[40px] lg:text-[48px] leading-tight font-bold text-black md:text-white">
               Bridging Tradition<br />

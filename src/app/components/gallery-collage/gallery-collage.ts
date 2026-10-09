@@ -104,7 +104,7 @@ export class GalleryCollage {
   protected readonly assets = figmaAssets;
 
   protected readonly stripPhotos = [
-    'https://res.cloudinary.com/dxlcnrwrq/image/upload/v1791224311/PRK09189.jpg',
+    'https://myschoolpune.org/wp-content/uploads/2025/06/DSC09492.webp',
     'https://res.cloudinary.com/dxlcnrwrq/image/upload/v1791224310/PRK09337.jpg',
     'https://res.cloudinary.com/dxlcnrwrq/image/upload/v1791224204/MS_image_1.webp',
     'https://res.cloudinary.com/dxlcnrwrq/image/upload/v1791224311/PRK00388.jpg',

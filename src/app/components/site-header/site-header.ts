@@ -60,7 +60,7 @@ interface NavLink {
         <div class="hidden items-end gap-0.5 xl:flex">
           <img [src]="variant() === 'overlay' ? assets.callIcon : assets.callIconDark" alt="" class="size-4" />
           <span class="whitespace-nowrap text-sm font-bold" [class.text-white]="variant() === 'overlay'" [class.text-[#2a2a2a]]="variant() === 'light'">
-            +91-9876543210
+            +91-8055000123
           </span>
         </div>
         <div class="hidden items-center gap-4 xl:flex">
@@ -75,7 +75,11 @@ interface NavLink {
           >
             Login
           </a>
-          <a href="#" class="bg-brand-orange whitespace-nowrap rounded px-5 py-2.5 text-base font-medium text-white">
+          <a
+            routerLink="/admissions"
+            fragment="lets-connect"
+            class="bg-brand-orange whitespace-nowrap rounded px-5 py-2.5 text-base font-medium text-white"
+          >
             Enquire Now
           </a>
         </div>
@@ -154,7 +158,7 @@ interface NavLink {
           <div class="my-2 flex items-center gap-2 px-3">
             <img [src]="variant() === 'overlay' ? assets.callIcon : assets.callIconDark" alt="" class="size-4" />
             <span class="text-sm font-bold" [class.text-white]="variant() === 'overlay'" [class.text-[#2a2a2a]]="variant() === 'light'">
-              +91-9876543210
+              +91-8055000123
             </span>
           </div>
 
@@ -169,7 +173,8 @@ interface NavLink {
               Login
             </a>
             <a
-              href="#"
+              routerLink="/admissions"
+              fragment="lets-connect"
               class="bg-brand-orange flex-1 rounded px-5 py-2.5 text-center text-base font-medium text-white"
               (click)="menuOpen.set(false)"
             >

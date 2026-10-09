@@ -9,6 +9,7 @@ interface BranchCard {
   titleLine2: string;
   address: string;
   phone: string;
+  directionsUrl: string;
   amenities: string;
   locationIcon: string;
   callIcon: string;
@@ -59,7 +60,15 @@ interface BranchCard {
           </div>
 
           <div class="flex flex-wrap items-center gap-4 sm:gap-6">
-            <a href="#" class="rounded px-6 py-4 text-[16px] font-semibold whitespace-nowrap md:text-[18px] xl:px-10 xl:py-5" [class]="card.primaryBtnClass">Get Directions</a>
+            <a
+              [href]="card.directionsUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="rounded px-6 py-4 text-[16px] font-semibold whitespace-nowrap md:text-[18px] xl:px-10 xl:py-5"
+              [class]="card.primaryBtnClass"
+            >
+              Get Directions
+            </a>
             <a href="#" class="rounded px-6 py-4 text-[16px] font-semibold whitespace-nowrap md:text-[18px] xl:px-10 xl:py-5" [class]="card.secondaryBtnClass">Book Visit</a>
           </div>
         </div>
@@ -77,7 +86,8 @@ export class BranchCardsSection {
       titleLine2: 'Wakad Campus',
       address:
         'Sr.no. 85/6A, My School, near Decathlon Wakad, Tathawade, Pune, Pimpri-Chinchwad, Maharashtra 411033',
-      phone: '+91-9876543210',
+      phone: '+91-8055000123',
+      directionsUrl: 'https://www.google.com/maps/dir/?api=1&destination=18.6111205,73.7515798',
       amenities: '· Smart Classrooms   · Library   · CCTV  · Digital Boards  · RO Water',
       locationIcon: figmaAssets.mdiLocation,
       callIcon: figmaAssets.callIconTeal,
@@ -92,7 +102,8 @@ export class BranchCardsSection {
       titleLine1: 'First School,',
       titleLine2: 'Pimpri Campus',
       address: 'School Road, Pimpri Station, Pimpri,\nPune 411018',
-      phone: '+91-9876543210',
+      phone: '+91-8055000123',
+      directionsUrl: 'https://www.google.com/maps/dir/?api=1&destination=School+Road%2C+Pimpri+Station%2C+Pimpri%2C+Pune+411018',
       amenities: '· Smart Classrooms  · Library   · CCTV   · Digital Boards  · RO Water',
       locationIcon: figmaAssets.mdiLocationWhite,
       callIcon: figmaAssets.callIconWhite,
