@@ -70,9 +70,9 @@ type SubmitStatus = 'idle' | 'sending' | 'success' | 'error';
       </div>
 
       <img
-        [src]="assets.admissionsFormIllustration"
+        src="assets/creative/school-bag.png"
         alt=""
-        class="h-[480px] w-[445px] max-w-full shrink-0 self-center object-contain object-center md:h-[640px] md:w-[460px] xl:mr-10 xl:h-[850px] xl:w-[680px] xl:-translate-y-10 xl:object-fill"
+        class="h-[400px] w-[340px] max-w-full shrink-0 self-center object-contain object-center mix-blend-multiply md:h-[520px] md:w-[400px] xl:mr-10 xl:h-[620px] xl:w-[480px]"
       />
     </section>
   `,

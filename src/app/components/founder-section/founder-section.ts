@@ -45,9 +45,9 @@ import { figmaAssets } from '../../shared/figma-assets';
       <div class="relative flex w-full flex-col items-start gap-8 lg:flex-row lg:gap-10">
         <div class="flex w-full max-w-[740px] shrink-0 flex-col items-start gap-4 lg:-mt-16 lg:w-[58%]">
           <img
-            [src]="assets.founderPhoto"
+            src="assets/creative/founder.jpg"
             alt="Dr. Mona Chadda, Founder of My School"
-            class="h-auto w-full rounded-lg object-fill lg:h-[400px] xl:h-[500px]"
+            class="mx-auto h-auto w-full max-w-[520px] rounded-lg"
           />
           <div class="mt-8 flex w-full flex-col items-center">
             <p class="w-fit border-b-2 border-black pb-1 text-[18px] md:text-[22px] font-bold text-black">Dr. Mona Chadda,</p>

@@ -14,11 +14,11 @@ import { figmaAssets } from '../../shared/figma-assets';
                 <img [src]="assets.lineShortAlt" alt="" class="h-px w-[46px]" />
                 <span class="text-brand-teal text-lg font-medium">Our Journey</span>
               </div>
-              <div class="relative aspect-[400/157] w-full overflow-hidden">
+              <div class="relative aspect-[5/2] w-full">
                 <img
-                  [src]="assets.journeyPimpri"
+                  src="assets/creative/journey-2012.jpeg"
                   alt="Pimpri campus, Est. 2012"
-                  class="absolute top-0 left-[-4.96%] h-[193.57%] w-[113.61%] max-w-none"
+                  class="absolute inset-0 size-full object-contain mix-blend-multiply"
                 />
               </div>
             </div>
@@ -34,13 +34,13 @@ import { figmaAssets } from '../../shared/figma-assets';
           </p>
         </div>
 
-        <div class="flex w-full max-w-[511px] flex-col items-start gap-5">
+        <div class="flex w-full max-w-[530px] flex-col items-start gap-5">
           <div class="flex w-full flex-col items-start gap-3.5">
-            <div class="relative aspect-[400/157] w-full overflow-hidden">
+            <div class="relative aspect-[5/2] w-full max-w-none lg:w-[110%]">
               <img
-                [src]="assets.journeyPimpri"
-                alt="Wakad campus, Est. 2016"
-                class="absolute top-[-97.16%] left-[-4.96%] h-[193.57%] w-[113.61%] max-w-none"
+                src="assets/creative/journey-2023.jpeg"
+                alt="Wakad campus, 2023"
+                class="absolute inset-0 size-full object-contain mix-blend-multiply"
               />
             </div>
             <h3 class="text-[32px] leading-[calc(2.5/2.25)] font-bold text-black md:text-[40px] lg:text-[48px]">Wakad, Pune</h3>
