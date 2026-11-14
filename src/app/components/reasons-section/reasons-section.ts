@@ -99,13 +99,13 @@ export class ReasonsSection {
       number: '01',
       segments: [{ text: 'Holistic ' }, { text: '360° Development', accent: 'orange' }],
       description:
-        'Academics, sports, creativity, communication, emotional intelligence, and character — the whole child, not just the exam-taker.',
+        'Academics, sports, creativity, communication, emotional intelligence, and character - the whole child, not just the exam-taker.',
     },
     {
       number: '02',
       segments: [{ text: 'Conceptual ' }, { text: '& Mindful Teaching' }],
       description:
-        'Concepts over rote memorisation — mindful methods that help children understand ideas deeply and retain them for life.',
+        'Concepts over rote memorisation - mindful methods that help children understand ideas deeply and retain them for life.',
     },
     {
       number: '03',
@@ -117,7 +117,7 @@ export class ReasonsSection {
       number: '04',
       segments: [{ text: 'Future-Ready ' }, { text: 'Skills' }],
       description:
-        "Robotics, coding, financial literacy, and German language — practical skills that prepare children for tomorrow's world.",
+        "Robotics, coding, financial literacy, and German language - practical skills that prepare children for tomorrow's world.",
     },
     {
       number: '05',

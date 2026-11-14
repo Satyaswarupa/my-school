@@ -63,7 +63,7 @@ export class HeroSection {
       if (!video) return;
 
       // The `muted` attribute alone doesn't reliably mute the element when set
-      // via Angular's renderer (vs. HTML parsing) — set the property directly
+      // via Angular's renderer (vs. HTML parsing) - set the property directly
       // so browser autoplay-without-gesture policies allow playback.
       video.muted = true;
       video.play().catch(() => {});

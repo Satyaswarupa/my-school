@@ -1,4 +1,4 @@
-import { Component, computed, signal } from '@angular/core';
+﻿import { Component, computed, signal } from '@angular/core';
 import { figmaAssets } from '../../shared/figma-assets';
 
 @Component({
@@ -19,6 +19,12 @@ import { figmaAssets } from '../../shared/figma-assets';
       background-color: var(--color-brand-teal);
       border-radius: 999px;
     }
+    /* Expanded poem column takes the founder column's height (instead of setting it), so Read Less lines up with the caption. */
+    @media (min-width: 1024px) {
+      .poem-col-expanded {
+        contain: size;
+      }
+    }
   `,
   template: `
     <section class="relative mx-auto flex w-full max-w-[1440px] flex-col items-start gap-10 overflow-hidden px-6 py-10 md:px-12 lg:px-[100px] md:py-16 md:min-h-[779px]">
@@ -36,33 +42,36 @@ import { figmaAssets } from '../../shared/figma-assets';
         <div class="flex w-full flex-col items-start gap-6">
           <img [src]="assets.quote" alt="" class="h-9 w-11" />
           <p class="text-brand-teal text-[18px] md:text-[20px] font-semibold">
-            My School is more than a workplace—it's a family dedicated to shaping confident, responsible, and
+            My School is more than a workplace-it's a family dedicated to shaping confident, responsible, and
             future-ready citizens who make a positive impact on the world.
           </p>
         </div>
       </div>
 
       <div class="relative flex w-full flex-col items-start gap-8 lg:flex-row lg:gap-10">
-        <div class="flex w-full max-w-[740px] shrink-0 flex-col items-start gap-4 lg:-mt-16 lg:w-[58%]">
+        <div class="flex w-full max-w-[740px] shrink-0 flex-col items-center gap-4 lg:-mt-16 lg:w-[58%] lg:items-start">
           <img
             src="assets/creative/founder.jpg"
             alt="Dr. Mona Chadda, Founder of My School"
-            class="mx-auto h-auto w-full max-w-[520px] rounded-lg"
+            class="h-auto w-full max-w-[460px] rounded-lg"
           />
-          <div class="mt-8 flex w-full flex-col items-center">
+          <div class="mt-6 flex w-full max-w-[460px] flex-col items-center">
             <p class="w-fit border-b-2 border-black pb-1 text-[18px] md:text-[22px] font-bold text-black">Dr. Mona Chadda,</p>
             <p class="text-base text-black">Founder, My School</p>
           </div>
         </div>
 
-        <div class="flex w-full flex-col items-start gap-6">
+        <div class="flex w-full flex-col items-start gap-6 lg:-mt-5 lg:self-stretch" [class.poem-col-expanded]="expanded()">
           <p class="w-fit border-b-2 border-black pb-1 text-[18px] md:text-[20px] font-bold text-black">"Heart of a Teacher"</p>
 
           <div
+            #poemBox
             class="flex w-full flex-col gap-2 text-[18px] md:text-[20px] leading-snug font-normal whitespace-pre-line text-[#2a2a2a]"
             [class.poem-scroll]="expanded()"
-            [class.max-h-[400px]]="expanded()"
+            [style.max-height.px]="expanded() ? collapsedHeight() : null"
             [class.overflow-y-auto]="expanded()"
+            [class.min-h-0]="expanded()"
+            [class.flex-1]="expanded()"
             [class.pr-3]="expanded()"
           >
             @for (stanza of visibleStanzas(); track $index; let last = $last) {
@@ -71,8 +80,8 @@ import { figmaAssets } from '../../shared/figma-assets';
                 @if (last && !expanded()) {
                   <button
                     type="button"
-                    class="ml-1 inline-flex cursor-pointer items-center gap-1 font-medium text-black"
-                    (click)="toggleExpanded()"
+                    class="inline-flex cursor-pointer items-center gap-1 font-medium text-black"
+                    (click)="toggleExpanded(poemBox)"
                   >
                     Read More →
                   </button>
@@ -83,8 +92,8 @@ import { figmaAssets } from '../../shared/figma-assets';
           @if (expanded()) {
             <button
               type="button"
-              class="inline-flex w-fit cursor-pointer items-center gap-1 font-medium text-black"
-              (click)="toggleExpanded()"
+              class="inline-flex w-fit cursor-pointer items-center gap-1 text-[18px] font-medium text-black md:text-[20px] lg:mt-auto"
+              (click)="toggleExpanded(poemBox)"
             >
               Read Less ←
             </button>
@@ -98,6 +107,7 @@ export class FounderSection {
   protected readonly assets = figmaAssets;
 
   protected readonly expanded = signal(false);
+  protected readonly collapsedHeight = signal<number | null>(null);
 
   protected readonly poemStanzas: string[] = [
     [
@@ -160,11 +170,18 @@ export class FounderSection {
     ].join('\n'),
   ];
 
-  protected readonly previewStanzas = this.poemStanzas.slice(0, 3);
+  protected readonly previewStanzas = [
+    ...this.poemStanzas.slice(0, 3),
+    this.poemStanzas[3].split('\n').slice(0, 2).join('\n'),
+  ];
 
   protected readonly visibleStanzas = computed(() => (this.expanded() ? this.poemStanzas : this.previewStanzas));
 
-  protected toggleExpanded(): void {
+  protected toggleExpanded(poemBox: HTMLElement): void {
+    // Lock the expanded (scrollable) poem to the collapsed preview's height so the layout doesn't jump.
+    if (!this.expanded()) {
+      this.collapsedHeight.set(poemBox.offsetHeight);
+    }
     this.expanded.update((value) => !value);
   }
 }

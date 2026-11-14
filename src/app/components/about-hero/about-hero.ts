@@ -26,7 +26,7 @@ import { figmaAssets } from '../../shared/figma-assets';
           </h1>
         </div>
         <p class="max-w-[680px] text-[18px] md:text-[20px] text-black">
-          From Pimpri to Wakad — My School has spent over a decade nurturing curious, confident, and compassionate
+          From Pimpri to Wakad - My School has spent over a decade nurturing curious, confident, and compassionate
           individuals.
         </p>
       </div>

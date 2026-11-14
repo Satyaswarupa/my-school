@@ -32,7 +32,6 @@ export class GalleryFilterBar {
     'Arts',
     'Events',
     'Technology',
-    'Achievements',
     'Videos',
   ];
 

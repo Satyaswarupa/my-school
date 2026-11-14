@@ -68,7 +68,7 @@ export class FaqSection {
     {
       question: 'What makes My School different from other CBSE schools?',
       answer:
-        "Beyond academics, we offer German language, robotics, financial literacy, public speaking, and our SEWA community service programme — signature initiatives you won't find in a typical CBSE school.",
+        "Beyond academics, we offer German language, robotics, financial literacy, public speaking, and our SEWA community service programme - signature initiatives you won't find in a typical CBSE school.",
     },
     {
       question: 'What is the SEWA programme?',

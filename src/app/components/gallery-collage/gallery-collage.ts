@@ -30,7 +30,7 @@ const circleHeightPct = (widthPct: number) => (widthPct * 1440) / 1050;
         <div class="pointer-events-none absolute inset-0 bg-[rgba(12,26,29,0.3)]"></div>
       </div>
 
-      <!-- Mobile: normal-flow layout — the absolute ring below only has room to work at md+ -->
+      <!-- Mobile: normal-flow layout - the absolute ring below only has room to work at md+ -->
       <div class="flex flex-col items-center gap-8 bg-white px-6 py-10 md:px-12 md:py-14 xl:hidden">
         <div class="flex flex-col items-center gap-3.5 text-center">
           <p class="text-brand-teal-deep text-lg font-medium">Creative Expression</p>
@@ -38,7 +38,7 @@ const circleHeightPct = (widthPct: number) => (widthPct * 1440) / 1050;
             Where Every Child <span class="text-brand-teal-deep">Creates.</span>
           </h2>
           <p class="max-w-[380px] text-base text-[#5e5e5e]">
-            Music, Dance, Drama, Art — every child finds their voice.
+            Music, Dance, Drama, Art - every child finds their voice.
           </p>
         </div>
 
@@ -93,7 +93,7 @@ const circleHeightPct = (widthPct: number) => (widthPct * 1440) / 1050;
             </h2>
           </div>
           <p class="max-w-[340px] text-base text-[#5e5e5e]">
-            Music, Dance, Drama, Art — every child finds their voice.
+            Music, Dance, Drama, Art - every child finds their voice.
           </p>
         </div>
       </div>

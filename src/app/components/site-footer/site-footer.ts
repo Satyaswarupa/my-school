@@ -43,7 +43,7 @@ import { figmaAssets } from '../../shared/figma-assets';
           <div class="flex w-full flex-col items-start gap-5">
             <div class="flex w-full flex-col items-start gap-5">
               <p class="w-full text-[16px] md:text-[18px] text-[#dedede]">
-                Parenting tips, events &amp; school updates — straight to your inbox.
+                Parenting tips, events &amp; school updates - straight to your inbox.
               </p>
               <form class="flex w-full items-stretch" (submit)="goToSubscribe(); $event.preventDefault()">
                 <div class="flex flex-1 items-center border border-[#5a7a80] px-2.5 py-5">

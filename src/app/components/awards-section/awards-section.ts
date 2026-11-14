@@ -4,6 +4,8 @@ import { figmaAssets } from '../../shared/figma-assets';
 interface AwardItem {
   image: string;
   caption: string;
+  /** Nudges the photo inside its circle (scaled up slightly so no gap shows at the edges). */
+  shift?: string;
 }
 
 @Component({
@@ -27,7 +29,9 @@ interface AwardItem {
       <div class="relative grid w-full grid-cols-1 justify-items-center gap-8 sm:grid-cols-3 sm:items-start sm:gap-6 md:gap-8 xl:flex xl:flex-row xl:flex-wrap xl:justify-center xl:gap-32">
         @for (award of awards; track award.caption) {
           <div class="flex w-full max-w-[200px] flex-col items-center gap-3 sm:max-w-[240px] md:gap-5 xl:max-w-[280px] xl:gap-6">
-            <img [src]="award.image" alt="" class="aspect-square w-full rounded-full object-cover" />
+            <div class="aspect-square w-full overflow-hidden rounded-full">
+              <img [src]="award.image" alt="" class="size-full object-cover" [style.transform]="award.shift" />
+            </div>
             <p class="text-center text-[15px] text-black sm:text-[16px] md:text-[18px] xl:text-[20px]">{{ award.caption }}</p>
           </div>
         }
@@ -42,6 +46,7 @@ export class AwardsSection {
     {
       image: figmaAssets.awardImage1,
       caption: 'Best CBSE school in western region of Maharashtra',
+      shift: 'translate(4%, -4%) scale(1.1)',
     },
     {
       image: figmaAssets.awardImage2,

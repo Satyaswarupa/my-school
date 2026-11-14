@@ -51,7 +51,7 @@ export class DifferentiatorsSection {
       number: '01',
       title: 'German Language',
       description:
-        'Global communication skills from early grades — a rare edge in competitive exams & global opportunities.',
+        'Global communication skills from early grades - a rare edge in competitive exams & global opportunities.',
     },
     {
       number: '02',
@@ -61,7 +61,7 @@ export class DifferentiatorsSection {
     {
       number: '03',
       title: 'Financial Literacy',
-      description: 'Real-world money management from Grade 1 — budgeting, saving, and the value of giving.',
+      description: 'Real-world money management from Grade 1 - budgeting, saving, and the value of giving.',
     },
     {
       number: '04',
@@ -73,7 +73,7 @@ export class DifferentiatorsSection {
       number: '05',
       title: 'SEWA Programme',
       description:
-        'Social Empowerment through Work, Education & Action — community leadership and civic responsibility.',
+        'Social Empowerment through Work, Education & Action - community leadership and civic responsibility.',
     },
     {
       number: '06',

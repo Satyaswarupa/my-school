@@ -47,7 +47,7 @@ const AUTOPLAY_MS = 12000;
                 [attr.aria-label]="i + 1 + ' of ' + testimonials.length"
                 [attr.aria-hidden]="current() !== i"
               >
-                <p class="w-full max-w-[1150px] text-[15px] leading-relaxed font-medium whitespace-pre-line text-white md:text-[17px] lg:text-[18px]">
+                <p class="w-full max-w-[1150px] text-[15px] leading-relaxed font-medium text-white md:text-[17px] lg:text-[18px]">
                   {{ t.quote }}
                 </p>
 
@@ -142,7 +142,7 @@ For me too, a school becomes special because of the wonderful people, especially
     {
       quote: `I have known Mona Ma’am since my child attended her little one-room preschool. Seeing My School today is truly amazing! What impresses me most is that Dr Mona Chadda has kept every promise she made back then. Her vision of equality, giving children a voice and encouraging open learning has never changed.
 
-I remember a beautiful thought from her poem Heart of a Teacher — “Subject does not matter, teaching is what teachers need.”
+I remember a beautiful thought from her poem Heart of a Teacher - “Subject does not matter, teaching is what teachers need.”
 
 From one classroom to My School today, her vision has only grown stronger. Proud to have been part of this journey!`,
       name: 'Parent of Vanshraj Ladkat',

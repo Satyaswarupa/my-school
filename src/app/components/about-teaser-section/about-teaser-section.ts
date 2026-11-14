@@ -27,7 +27,7 @@ import { figmaAssets } from '../../shared/figma-assets';
               institution committed to nurturing confident, compassionate, and future-ready individuals.
             </p>
             <p>
-              We believe education is not about memorising facts — it is about understanding life,
+              We believe education is not about memorising facts - it is about understanding life,
               discovering strengths, and developing the skills needed for the future.
             </p>
           </div>

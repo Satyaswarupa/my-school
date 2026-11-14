@@ -52,7 +52,7 @@ interface GalleryPhoto {
       </section>
     } @else {
       <p class="w-full py-20 text-center text-lg text-[#5e5e5e]">
-        No photos in "{{ activeCategory() }}" yet — check back soon.
+        No photos in "{{ activeCategory() }}" yet - check back soon.
       </p>
     }
 
@@ -99,6 +99,7 @@ export class GalleryMosaic {
     { src: 'assets/gallery/gallery-dance.jpg', alt: 'Students practising in the dance studio', label: 'Dance', category: 'Arts' },
     { src: 'assets/gallery/gallery-round-8.jpg', alt: 'Students learning keyboard in the music room', label: 'Music', category: 'Arts' },
     { src: 'assets/gallery/gallery-round-5.jpg', alt: 'Student playing on the sports turf', label: 'Sports', category: 'Sports' },
+    { src: 'assets/gallery/gallery-round-4.jpg', alt: 'Students doing yoga on the turf', label: 'Sports', category: 'Sports' },
     { src: 'assets/gallery/gallery-31.jpg', alt: 'Young children cheering on the lawn', label: 'Campus Life', category: 'Campus Life' },
     { src: 'assets/gallery/gallery-11.jpg', alt: 'Mothers drumming together at a school event', label: 'Events', category: 'Events' },
     { src: 'assets/gallery/gallery-7.jpg', alt: 'Grandparents Day celebration', label: 'Grandparents Day', category: 'Events' },
@@ -111,7 +112,7 @@ export class GalleryMosaic {
     { src: 'assets/gallery/annual-function-6.jpg', alt: 'Diya dance performance at annual day', label: 'Annual Day', category: 'Events' },
     { src: 'assets/gallery/girl-standing.jpg', alt: 'Student speaking at the podium', label: 'Public Speaking', category: 'Academics' },
     { src: 'assets/gallery/computer-room.jpg', alt: 'My School computer lab', label: 'Computer Lab', category: 'Technology' },
-    { src: 'assets/gallery/school-building-2.jpg', alt: 'My School building surrounded by trees', label: 'Our Campus', category: 'Campus Life' },
+    { src: 'assets/gallery/robotics.jpg', alt: 'My School robotics lab', label: 'Robotics Lab', category: 'Technology' },
   ];
 
   protected readonly allPhotos = computed(() => this.photos);

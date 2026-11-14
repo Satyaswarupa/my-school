@@ -46,7 +46,7 @@ interface Pillar {
                 >
                   {{ pillar.label }}
                 </p>
-                <p class="text-[16px] md:text-[18px] font-bold text-black">{{ pillar.description }}</p>
+                <p class="text-[16px] md:text-[18px] font-normal text-black">{{ pillar.description }}</p>
               </div>
             </div>
           }
@@ -64,7 +64,7 @@ export class VisionMissionSection {
       label: 'VISION',
       labelColor: 'teal',
       description:
-        'To be a learning community that nurtures the whole child — academically, emotionally, socially, and physically — preparing them for a meaningful and impactful life.',
+        'To be a learning community that nurtures the whole child - academically, emotionally, socially, and physically - preparing them for a meaningful and impactful life.',
     },
     {
       letter: 'M',
@@ -78,7 +78,7 @@ export class VisionMissionSection {
       label: 'VALUES',
       labelColor: 'teal',
       description:
-        'Respect · Responsibility · Empathy · Curiosity · Integrity · Excellence · Compassion · Social Awareness — the invisible curriculum behind everything we do.',
+        'Respect · Responsibility · Empathy · Curiosity · Integrity · Excellence · Compassion · Social Awareness - the invisible curriculum behind everything we do.',
     },
   ];
 }

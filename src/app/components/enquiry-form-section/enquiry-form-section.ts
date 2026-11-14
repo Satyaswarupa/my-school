@@ -50,7 +50,7 @@ type SubmitStatus = 'idle' | 'sending' | 'success' | 'error';
 
           @if (status() === 'success') {
             <p class="text-brand-teal w-full text-base font-medium">
-              Thanks! Your enquiry has been sent — we'll get back to you shortly.
+              Thanks! Your enquiry has been sent - we'll get back to you shortly.
             </p>
           } @else if (status() === 'error') {
             <p class="w-full text-base font-medium text-red-600">

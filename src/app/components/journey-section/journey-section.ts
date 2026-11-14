@@ -29,7 +29,7 @@ import { figmaAssets } from '../../shared/figma-assets';
             <span class="text-brand-orange text-[18px] md:text-[20px] font-medium">ORIGIN CAMPUS</span>
           </div>
           <p class="text-[16px] md:text-[18px] text-black">
-            Founded with a clear vision — to build a school that goes beyond textbooks and shapes real human beings.
+            Founded with a clear vision - to build a school that goes beyond textbooks and shapes real human beings.
             Started with a handful of classrooms and an ocean of ambition.
           </p>
         </div>
