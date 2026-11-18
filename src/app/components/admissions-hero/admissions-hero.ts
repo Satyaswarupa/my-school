@@ -24,7 +24,7 @@ import { figmaAssets } from '../../shared/figma-assets';
         </h1>
       </div>
 
-      <img src="assets/creative/admission-journey.png" alt="Step-by-step admission journey at My School" class="relative w-full px-4 pb-10 md:px-8" />
+      <img src="assets/creative/admission-journey.webp" alt="Step-by-step admission journey at My School" class="relative w-full px-4 pb-10 md:px-8" />
     </section>
   `,
 })
