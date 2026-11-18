@@ -145,7 +145,6 @@ export class GalleryMosaic {
     { src: 'assets/gallery/gallery-32.jpg', alt: 'Students at a health check-up camp', label: 'Health Check-up', category: 'Campus Life' },
     { src: 'assets/gallery/gallery-36.jpg', alt: 'Young students playing in the garden', label: 'Campus Life', category: 'Campus Life' },
     { src: 'assets/gallery/gallery-44.jpg', alt: 'Teacher meeting with parents', label: 'Parent Interaction', category: 'Campus Life' },
-    { src: 'assets/gallery/school-bag.jpg', alt: 'My School bag and stationery kit', label: 'School Kit', category: 'Campus Life' },
   ];
 
   protected readonly allPhotos = computed(() => this.photos);

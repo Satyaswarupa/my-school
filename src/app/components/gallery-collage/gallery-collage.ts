@@ -114,7 +114,7 @@ export class GalleryCollage {
   // Clustered layout (after the reference design); listed clockwise from the top
   protected readonly collagePhotos: CollagePhoto[] = [
     { src: 'assets/creative/music.jpeg', label: 'Music', accent: 'teal', leftPct: 43.5, topPct: 9.36, widthPct: 16, heightPct: circleHeightPct(16) },
-    { src: 'assets/creative/arts-crafts.jpg', label: 'Arts & Crafts', accent: 'orange', leftPct: 64.5, topPct: 19.46, widthPct: 16, heightPct: circleHeightPct(16) },
+    { src: 'assets/creative/arts-crafts.jpg', label: 'Arts & Crafts', accent: 'orange', leftPct: 64.5, topPct: 19.46, widthPct: 16, heightPct: circleHeightPct(16), focus: '50% 20%' },
     { src: 'assets/creative/dance.jpeg', label: 'Dance', accent: 'teal', leftPct: 60.9, topPct: 43.1, widthPct: 20, heightPct: circleHeightPct(20) },
     { src: 'assets/creative/sports.jpeg', label: 'Sports', accent: 'teal', leftPct: 53.53, topPct: 68.79, widthPct: 16, heightPct: circleHeightPct(16) },
     { src: 'assets/creative/science-innovation.jpg', label: 'Science & Innovation', accent: 'orange', leftPct: 33.61, topPct: 56.62, widthPct: CIRCLE_WIDTH_PCT, heightPct: circleHeightPct(CIRCLE_WIDTH_PCT) },

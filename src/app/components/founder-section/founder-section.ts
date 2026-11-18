@@ -40,7 +40,6 @@ import { figmaAssets } from '../../shared/figma-assets';
         </div>
 
         <div class="flex w-full flex-col items-start gap-6">
-          <img [src]="assets.quote" alt="" class="h-9 w-11" />
           <p class="text-brand-teal text-[18px] md:text-[20px] font-semibold">
             My School is more than a workplace-it's a family dedicated to shaping confident, responsible, and
             future-ready citizens who make a positive impact on the world.
@@ -49,13 +48,13 @@ import { figmaAssets } from '../../shared/figma-assets';
       </div>
 
       <div class="relative flex w-full flex-col items-start gap-8 lg:flex-row lg:gap-10">
-        <div class="flex w-full max-w-[740px] shrink-0 flex-col items-center gap-4 lg:-mt-16 lg:w-[58%] lg:items-start">
+        <div class="flex w-full max-w-[740px] shrink-0 flex-col items-center gap-4 lg:-mt-6 lg:w-[58%] lg:items-start">
           <img
             src="assets/creative/founder.jpg"
             alt="Dr. Mona Chadda, Founder of My School"
             class="h-auto w-full max-w-[460px] rounded-lg"
           />
-          <div class="mt-6 flex w-full max-w-[460px] flex-col items-center">
+          <div class="mt-2 flex w-full max-w-[460px] flex-col items-center">
             <p class="w-fit border-b-2 border-black pb-1 text-[18px] md:text-[22px] font-bold text-black">Dr. Mona Chadda,</p>
             <p class="text-base text-black">Founder, My School</p>
           </div>
@@ -126,12 +125,10 @@ export class FounderSection {
       'Her goal is not just to teach knowledge',
       'By filling the box with more parts its putting the pieces together, ',
       'to create the work of art',
-      'The process is painfully slow at times some need more help ',
-      'than the other  ,each day for a child is work in progress.',
-      'with assorted shapes and colour',
+      'The process is painfully slow at times some need more help than the other,each day for a child is work in progress.with assorted shapes and colour ',
     ].join('\n'),
     [
-      'First she creates a class room',
+      'First she creates a classroom',
       'Where the child can feel safe in the school',
       'Where he never feels threatened or afraid to try',
       'And kindness is always the rule',

@@ -50,7 +50,7 @@ export class AwardsSection {
     },
     {
       image: figmaAssets.awardImage2,
-      caption: 'Miss Mona Chadda has been awarded as BharatGuild I Impact Mentor',
+      caption: 'Miss Mona Chadda has been awarded as BharatGuild Impact Mentor',
     },
     {
       image: figmaAssets.awardImage3,

@@ -13,7 +13,7 @@ import { figmaAssets } from '../../shared/figma-assets';
             START
           </p>
           <div class="relative z-20 flex flex-col items-start gap-3.5">
-            <p class="text-[16px] md:text-[18px] font-medium text-black">Admissions Open 2026–27</p>
+            <p class="text-[16px] md:text-[18px] font-medium text-black">Admissions Open</p>
             <h2 class="text-[32px] md:text-[40px] lg:text-[48px] leading-tight font-bold whitespace-nowrap text-black">
               Their story<br />
               begins <span class="text-brand-orange">with you.</span>

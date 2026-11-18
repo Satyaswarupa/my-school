@@ -17,9 +17,9 @@ import { figmaAssets } from '../../shared/figma-assets';
             </div>
           </div>
           <p class="text-[16px] leading-7 text-[#dedede] md:text-[18px]">
-            Learning Beyond Academics. Growing<br />
-            Beyond Expectations. A learner-centric<br />
-            CBSE institution serving Pune since 2012.
+            Learning Beyond Academics.<br />
+            Growing Beyond Expectations.<br />
+           A learner-centric CBSE institution serving Pune since 2012.
           </p>
         </div>
 
