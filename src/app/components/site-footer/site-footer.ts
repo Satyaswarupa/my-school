@@ -21,6 +21,10 @@ import { figmaAssets } from '../../shared/figma-assets';
             Growing Beyond Expectations.<br />
            A learner-centric CBSE institution serving Pune since 2012.
           </p>
+          <p class="-mt-6 text-[14px] leading-6 text-[#dedede] md:text-[16px]">
+            First School, Dairy Farm Road, Near Softy Junction, Shastri Nagar, Pimpri Colony, Pune,
+            Pimpri-Chinchwad, Maharashtra 411017
+          </p>
         </div>
 
         <div class="flex w-[220px] shrink-0 flex-col items-start gap-10">

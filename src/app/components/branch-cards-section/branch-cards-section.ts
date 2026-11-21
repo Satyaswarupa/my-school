@@ -101,9 +101,11 @@ export class BranchCardsSection {
       tag: 'Orignal Campus · Est. 2012',
       titleLine1: 'First School,',
       titleLine2: 'Pimpri Campus',
-      address: 'School Road, Pimpri Station, Pimpri,\nPune 411018',
+      address:
+        'First School, Dairy Farm Road, Near Softy Junction, Shastri Nagar, Pimpri Colony, Pune, Pimpri-Chinchwad, Maharashtra 411017',
       phone: '+91-8087725164',
-      directionsUrl: 'https://www.google.com/maps/dir/?api=1&destination=School+Road%2C+Pimpri+Station%2C+Pimpri%2C+Pune+411018',
+      directionsUrl:
+        'https://www.google.com/maps/dir/?api=1&destination=First+School%2C+Dairy+Farm+Road%2C+Near+Softy+Junction%2C+Shastri+Nagar%2C+Pimpri+Colony%2C+Pune%2C+Maharashtra+411017',
       amenities: '· Smart Classrooms  · Library   · CCTV   · Digital Boards',
       locationIcon: figmaAssets.mdiLocationWhite,
       callIcon: figmaAssets.callIconWhite,
